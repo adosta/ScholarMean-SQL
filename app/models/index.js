@@ -20,9 +20,9 @@ models.forEach(function(model) {
 
 /// describe relationships
 (function(m) {
-  m.deposito.belongsTo(m.alumno, {foreignKey: '_deposito'});
+  m.deposito.belongsTo(m.alumno, {foreignKey: '_alumno'});
 
-  m.alumno.hasMany(m.deposito, {foreignKey: '_deposito'});
+  m.alumno.hasMany(m.deposito, {foreignKey: '_alumno'});
   m.alumno.belongsTo(m.grupo, {foreignKey: '_grupo'});
   m.alumno.hasMany(m.archivo, {foreignKey: '_archivo'});
   m.alumno.belongsTo(m.carrera, {foreignKey: '_carrera'});

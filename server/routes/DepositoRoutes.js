@@ -33,11 +33,13 @@ module.exports = function(io, models){
 
 			var monto = req.body.monto;
     		var fecha = new Date(req.body.fecha);
+    		var concepto = req.body.concepto;
     		var alumnoNoMatricula = req.body._alumno;
     		Deposito.create({
-		      name: monto,
-		      role: fecha,
-		      alumnoNoMatricula: alumnoNoMatricula
+		      monto: monto,
+		      fecha: fecha,
+		      concepto: concepto,
+		      _alumno: alumnoNoMatricula
 		    })
 		      .then(newDeposito => {
 		        res.json(newDeposito);

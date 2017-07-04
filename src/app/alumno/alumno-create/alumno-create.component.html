@@ -83,7 +83,7 @@
 </div>
 
 <!--Listado de pagos-->
-<div class="panel panel-primary" *ngIf='nuevoAlumno._depositos'>
+<div class="panel panel-primary" *ngIf='nuevoAlumno.depositos'>
 	<div class="panel-heading">
 		<h3 class="panel-title">Listado de pagos</h3>
 	</div>
@@ -96,8 +96,9 @@
 				</tr>
 			</thead>
 			<tbody >
-				<tr *ngFor='let deposito of nuevoAlumno._depositos'>
+				<tr *ngFor='let deposito of nuevoAlumno.depositos'>
 					<td>{{deposito.monto}}</td>
+					<td>{{deposito.concepto}}</td>
 					<td>{{deposito.fecha}}</td>
 				</tr>
 			</tbody>

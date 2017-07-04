@@ -13,6 +13,9 @@ module.exports=function(sequelize, DataTypes){
   monto: {
     type: Sequelize.DOUBLE
   },
+  concepto:{
+    type: Sequelize.STRING
+  },
   fecha: {
     type: Sequelize.DATE
   }, 

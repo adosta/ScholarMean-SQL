@@ -77,30 +77,13 @@ module.exports = function(io,models){
     /*
     * Elimina el registro identificado por el ID indicado
     */
-    /*router.route('/carrera/:id')
-    .delete(function(req, res) {
-        var id = req.params.id;
-        console.log("id: "+id);
-        //Listado de todas las carreras
-        Carrera.findOne({_id:id}).remove().exec(function(err,data) {
-            if (err){
-                console.log('Error');
-                res.send(err);
-            }else{
-                console.log('DONE!: '+data);
-                io.sockets.emit('carreraEliminada',id);
-                res.json(data);
-            }
-        });
-        
-    });*/
 
     router.route('/carrera/:id')
     .delete(function(req, res) {
         var id = req.params.id;
         Carrera.destroy({
             where: {
-                carreraId: id
+                _id: id
             }
         })
         .then(deletedCarrera => {

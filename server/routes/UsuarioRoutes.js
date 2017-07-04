@@ -1,10 +1,10 @@
 var chalk = require('chalk');
-module.exports = function(io){
+module.exports = function(io,models){
     //var mongoose = require('../../app/models/dbConnection');
     var cleardb = require('../../app/models/dbConnection');
     
     //Se importa el modelo
-    var Usuario = require('../../app/models/usuario');
+    var Usuario = models.usuario;
 
     var router = require('express').Router();
     
@@ -79,7 +79,7 @@ module.exports = function(io){
     });*/
     router.route('/usuario/authenticate')
     .post(function(req, res) {
-        Usuario.findOne({
+        Usuario.find({
             where:{email:req.body.email}
         })
         .then(usuario =>{
