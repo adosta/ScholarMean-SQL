@@ -109,7 +109,8 @@ module.exports = function(io, models){
                             }
                         }
                     }
-            }
+            },
+            include:[Grupo]
         }).then(alumnos => {
             res.json(alumnos);
         });

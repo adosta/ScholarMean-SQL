@@ -22,6 +22,7 @@ export class AlumnoBuscadorComponent implements OnInit {
 
   ngOnInit() {
   	this.filtro._carrera="";
+    this.filtro.Nombre="";
   	this.showAlumnos();
     this._carreraService.getCarreras()
     .subscribe(

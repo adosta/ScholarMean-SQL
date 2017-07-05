@@ -65,7 +65,9 @@ module.exports = function(io,models){
     */
     router.route('/carrera')
     .get(function(req, res) {
-        Carrera.findAll()
+        Carrera.findAll({
+            include: [Grupo]
+        })
         .then(carreras => {
             console.log("LISTA DE CARRERAS",chalk.green(carreras));
             res.json(carreras);

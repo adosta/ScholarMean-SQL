@@ -156,12 +156,13 @@ module.exports = function(io, models){
         console.log(chalk.blue('Final:')+chalk.red(final));
         Deposito.findAll({ 
         	 where: {
-			    createdAt: { gte: inicio },
-			    createdAt: { lte: final }
-			  		}
+        	 	createdAt:{
+        	 		$between: [inicio, final]
+        	 	}
+			  }
 		})
-        .then(newDeposito => {
-		        res.json(newDeposito);
+        .then(depositos => {
+		        res.json(depositos);
 		});
 
 

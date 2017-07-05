@@ -17,10 +17,10 @@
 				<label for="carrera">Carrera</label>
 				<select class="form-control" id="carrera" name="carrera"
 				(change)='seleccionCarrera()'
-				[(ngModel)]='filtro.carrera'>
+				[(ngModel)]='filtro._carrera'>
 					<option value="">Todas</option>
 				    <option *ngFor="let carrera of Carreras"
-				    [value]="carrera.id">
+				    [value]="carrera._id">
 				    	{{carrera.nombre}}
 				    </option>
 				  </select>
@@ -30,10 +30,10 @@
 				<label for="grupo">Grupo</label>
 				<select class="form-control" id="grupo" name="grupo"
 				(change)='buscar()'
-				[(ngModel)]='filtro.grupo'>
+				[(ngModel)]='filtro._grupo'>
 					<option value="">Todas</option>
 				    <option *ngFor="let grupo of Grupos"
-				    [value]="grupo.id">
+				    [value]="grupo._id">
 				    	{{grupo.nombre}}
 				    </option>
 				  </select>
