@@ -9,15 +9,15 @@ import { UserLogin } from '../../usuario/userLogin';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {Subscriber} from 'rxjs';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import * as moment from 'moment';
-
 
 
 
 @Component({ 
   selector: 'app-alumno-create',
   templateUrl: './alumno-create.component.html',
-  styleUrls: ['./alumno-create.component.css']
+  styleUrls: ['./alumno-create.component.css'],
 })
 export class AlumnoCreateComponent implements OnInit {
 	Carreras:Carrera[]
@@ -26,6 +26,16 @@ export class AlumnoCreateComponent implements OnInit {
 	alumnoStatus = AlumnoStatus.EnRegistro;
 	userLogin:UserLogin = new UserLogin();
 	nuevoArchivo: File;
+	tipoArchivo: string;
+	tipoDocumento: string;
+	existeDocumento = new Array();
+
+	tipos = [
+       "acta", "constancia"
+     ];
+
+	URL = 'http://localhost:8000/api/Alumno/upload/';
+	public uploader:FileUploader;
 
 	private _moment = moment();
 	constructor(private _carreraService:CarreraService,
@@ -51,8 +61,17 @@ export class AlumnoCreateComponent implements OnInit {
 							.format('YYYY-MM-DD');
 						console.log(this.nuevoAlumno.FechaNac);
 						this.userLogin = this.nuevoAlumno._usuario;
-
+						//concatenar id en dir
+						this.URL = this.URL + this.nuevoAlumno._id;
+						this.uploader = new FileUploader({url: this.URL});
+						this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+							var responsePath = JSON.parse(response);
+							console.log(response, responsePath);// the url will be in the response
+						};
+						this.cambioTipo("acta");
 						this.determinarStatusAlumno();
+
+						this.verificarDocumento();
 		        	},
 					error=>alert(error),
 					()=>console.log('done!')
@@ -61,6 +80,10 @@ export class AlumnoCreateComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		/*this.uploader.onBeforeUploadItem = (fileItem: any) => {
+		  fileItem.formData.push( { id: this.nuevoAlumno._id } );
+		 };*/
+
 		//Obtiene las carreras para rellenar dropdown
 		this._carreraService.getCarreras()
 		.subscribe(
@@ -74,11 +97,24 @@ export class AlumnoCreateComponent implements OnInit {
 			},
 			(error)=>{console.log(error)},
 		);
+
+		/*for(let t of this.tipos){
+			this.existeActa = this.verificarDocumento(t);
+		}*/
+		
 	}
 
 	 fileChangeEvent(fileInput: any){
         this.nuevoArchivo = <File> fileInput.target.files[0];
         console.log(this.nuevoArchivo);
+    }
+
+    cambioTipo(tipo){
+    	console.log(tipo);
+    	this.tipoDocumento = tipo;
+    	this.uploader.setOptions({
+		        additionalParameter: { tipoDocumento: tipo }
+		});
     }
 
 	guardarAlumno(){
@@ -112,14 +148,23 @@ export class AlumnoCreateComponent implements OnInit {
 		);
 	}
 
-	/*uploadFile(){
-		this._alumnoService.addArchivo()
+	uploadFile(){
+		this._alumnoService.addArchivo(this.alumnoID, this.nuevoArchivo)
 		.subscribe(
 			(data:Alumno)=>{ },
 			error=>alert(error),
 			()=>console.log('done!')
 		);
-	}*/
+	}
+
+	descargarArchivo(){
+		this._alumnoService.downloadArchivo(this.alumnoID)
+		.subscribe(
+			(data:Alumno)=>{ },
+			error=>alert(error),
+			()=>console.log('done!')
+		);
+	}
 
 	modificarAlumno(){
 		this._alumnoService.updateAlumno(this.nuevoAlumno)
@@ -168,6 +213,29 @@ export class AlumnoCreateComponent implements OnInit {
 
 	showInscribirButton(){
 		return this.alumnoStatus == AlumnoStatus.Preinscrito;
+	}
+
+	/*verificarDocumento(tipo){
+		console.log(this.nuevoAlumno);
+		this._alumnoService.verificarExistencia(tipo, this.nuevoAlumno.noMatricula)
+		.subscribe(data=>{
+				this.existeActa = data;
+			},
+			error=>alert(error),
+			()=>console.log('done!')
+		)
+	}*/
+
+	verificarDocumento(){
+		console.log(this.nuevoAlumno);
+		this._alumnoService.verificarExistencia(this.nuevoAlumno.noMatricula)
+		.subscribe(data=>{
+				this.existeDocumento = data;
+				console.log(this.existeDocumento)
+			},
+			error=>alert(error),
+			()=>console.log('done!')
+		)
 	}
 
 	get testJson(){return JSON.stringify(this.nuevoAlumno)}

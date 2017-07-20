@@ -24,11 +24,13 @@ module.exports = function(io,models){
         // create a new instance of the carrera model
         var nombre = req.body.nombre;
         var abreviacion = req.body.abreviacion;
+        var num = req.body.num;
         
         // save the Carrera and check for errors
         Carrera.create({
             nombre: nombre,
-            abreviacion: abreviacion
+            abreviacion: abreviacion,
+            num: num
         })
         .then(newCarrera => {
             console.log(newCarrera);

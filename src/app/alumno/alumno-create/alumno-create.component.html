@@ -76,11 +76,28 @@
 </div>
 
 <div>
-	<form>
-        <input type="file" name="sampleFile" (change)="fileChangeEvent($event)" />
-        <input type='submit' value='Cargar' (click)='uploadFile()'/>
-    </form>  
+		<label for="documento">Documento: </label>
+        <input type="file" name="documento" id="documento" ng2FileSelect [uploader]="uploader" />
+        <!--<select id="tipo" name="tipo" class="form-control" 
+        (change)="cambioTipo($event.target.value)">
+        	<option value="acta">Acta</option>
+  			<option value="constancia">Constancia</option>
+        </select>-->
+        <select id="tipoDocumento" name="tipoDocumento" required 
+        (change)="cambioTipo($event.target.value)">
+		  <option *ngFor="let t of tipos" [value]="t">{{t | uppercase}}</option>
+		</select>
+        <input type='submit' value='Cargar' (click)="uploader.uploadAll()"/>
 </div>
+
+<div>
+	<ng-container  *ngFor="let t of existeDocumento">
+		<a *ngIf="t.existe" target="_blank" 
+		href="http://localhost:8000/api/descargarDocumento/{{nuevoAlumno._id}}/{{t.tipo}}">{{t.tipo}}</a>
+	</ng-container>
+</div>
+
+
 
 <!--Listado de pagos-->
 <div class="panel panel-primary" *ngIf='nuevoAlumno.depositos'>

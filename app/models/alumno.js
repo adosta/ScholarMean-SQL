@@ -10,6 +10,9 @@ module.exports=function(sequelize, DataTypes){
 	    primaryKey: true,
 	    autoIncrement: true,
 	},
+	noMatricula: {
+	    type: Sequelize.INTEGER,
+	},
 	Nombre: {
 		type: Sequelize.STRING
 	},

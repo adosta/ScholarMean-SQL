@@ -35,6 +35,7 @@ export class CarreraComponent implements OnInit {
   	this.showCarreras();
     //Evento de deteccion de registro creado
     this.socket.on('carreraCreada', function(data){
+      this.showCarreras();
       this.carreras.push(data);
       this._notificationsService.info("Nuevo","Registro de carrera");
     }.bind(this));

@@ -72,10 +72,11 @@ export class AlumnoService {
 		return AlumnosList;
 	}
 
-	/*addArchivo(id,archivo){
-		return this._http.post(this.domain+'upload')
+	addArchivo(id,archivo){
+		console.log(archivo);
+		return this._http.post(this.domain+'upload', {archivo: archivo})
 		.map(res=>res.json())
-	}*/
+	}
 	
 	sortList_ApellidoP_asc(AlumnosList:Alumno[]){
 		AlumnosList = AlumnosList.sort(
@@ -88,6 +89,16 @@ export class AlumnoService {
 			}
 		);
 		return AlumnosList;
+	}
+
+	downloadArchivo(id){
+		return this._http.get('/api/descargarDocumento')
+		.map(res=>res.json())
+	}
+
+	verificarExistencia(matricula){
+		return this._http.get('http://localhost:8000/api/verificarDocumento/'+matricula)
+		.map(res=>res.json())
 	}
 
 } 

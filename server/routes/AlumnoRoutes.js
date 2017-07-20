@@ -8,7 +8,25 @@ module.exports = function(io, models){
     var Carrera = models.carrera;
     var Usuario = models.usuario;
     var Grupo = models.grupo;
+    var multer = require('multer');
+    var fs = require('fs');
+    var glob = require("glob");
+    var path = require('path');
     var router = require('express').Router();
+
+    var DIR = './uploads/';
+    
+
+    var storage = multer.diskStorage({
+            destination: function(req, file, cb) {
+                    cb(null, DIR)
+            },
+             /*filename: function (req, file, cb) {
+                cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
+              }*/
+    });
+
+    var upload = multer({ storage: storage });
     
     // POST /api/Alumno
     /*
@@ -191,7 +209,7 @@ module.exports = function(io, models){
      /*router.route('/Alumno/getUser/:id')
     .get(function(req, res) {
         var id = req.params._id;
-        console.log("SE ESTA BUSCANDO");
+        consoe.log("SE ESTA BUSCANDO");
 
         //Se busca por ID
         Alumno.findOne({
@@ -205,21 +223,76 @@ module.exports = function(io, models){
         })
     });*/
 
-    //Cargar archivos
-    router.post('/Alumno/upload', function(req, res) {
-      if (!req.files)
-        return res.status(400).send('No files were uploaded.');
-     
-      // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file 
-      let sampleFile = req.files.sampleFile;
-     
-      // Use the mv() method to place the file somewhere on your server 
-      sampleFile.mv('/somewhere/on/your/server/filename.jpg', function(err) {
-        if (err)
-          return res.status(500).send(err);
-     
-        res.send('File uploaded!');
-      });
+
+    router.post('/Alumno/upload/:id', upload.single("file"), function(req, res, next) {
+        // req.body contains the text fields
+        console.log(req.params.id);
+        console.log(req.body.tipoDocumento);
+        console.log(req.file.mimetype);
+        var nombre = req.file.filename;
+
+        Alumno.find({
+            where:{
+                _id: req.params.id
+            }
+        })
+        .then(alumno=>{
+            
+            fs.rename('./uploads/'+nombre, './documentos/'+req.body.tipoDocumento+'/'
+            +alumno.noMatricula+path.extname(req.file.originalname), function(err) {
+            if ( err ) console.log('ERROR: ' + err);
+            });
+
+            console.log("Fuera de callback");
+            res.json('file uploaded');
+            next();
+        })
+
+        /*fs.rename('./uploads/'+nombre, './documentos/'+req.body.tipoDocumento+'/'
+            +nombre+path.extname(req.file.originalname), function(err) {
+            if ( err ) console.log('ERROR: ' + err);
+        });
+
+        console.log("Fuera de callback");
+        res.json('file uploaded');
+        next();*/
+    });
+
+    router.route('/descargarDocumento/:id/:tipo')
+    .get(function (req, res) {
+        var formato = ['.jpg','.pdf','.png'];
+        console.log(req.params.id);
+        console.log(req.params.tipo);
+
+        Alumno.find({
+            where:{
+                _id: req.params.id
+            }
+        })
+        .then(alumno=>{
+            for(var i=0; j=2,i<=j; i++){
+                var existe = fs.existsSync('./documentos/'+req.params.tipo+'/'+alumno.noMatricula+formato[i])
+                if (existe == true){
+                    res.download('./documentos/'+req.params.tipo+'/'+alumno.noMatricula+formato[i])
+                }
+            }
+        })
+    });
+
+    router.route('/verificarDocumento/:matricula')
+    .get(function (req, res) {
+        var formato = ['.jpg','.pdf','.png'];
+        var tipo = ["acta","constancia"];
+        console.log(req.params.matricula);
+        matricula = req.params.matricula;
+        var existencia = new Array();
+
+        for(var i=0; j=2,i<=j; i++){
+            var existe = fs.existsSync('./documentos/'+tipo[i]+'/'+matricula+formato[i])
+            existencia.push({tipo:tipo[i],existe:existe});
+        }
+        console.log(existencia);
+        res.json(existencia);
     });
 
     // GET /api/Alumno/registrarAlumno:id
@@ -254,6 +327,36 @@ module.exports = function(io, models){
                 alumno.updateAttributes({
                     _grupo: carrera.grupos[0]._id
                 })
+
+                Grupo.find({
+                    where: {_id: carrera.grupos[0]._id},
+                    include: [Alumno]
+                })
+                .then(grupo=>{
+                    var noMatricula = alumno.createdAt.getFullYear().toString().substr(2,2);
+                    noMatricula+='30';
+                    noMatricula+=carrera.num*10;
+                    console.log(noMatricula);
+                    var numAlumnos = grupo.alumnos.length;
+                    noMatricula+=numAlumnos<10?'0'+numAlumnos:numAlumnos;
+                    //alumno.noMatricula = noMatricula;
+                    console.log(chalk.red(alumno.noMatricula));
+                    alumno.updateAttributes({
+                        noMatricula: noMatricula
+                    })
+                })
+
+                /*var grupo = carrera.grupos[0]
+                console.log("GRUPO: ",grupo);
+                var noMatricula = alumno.createdAt.getFullYear().toString().substr(2,2);
+                noMatricula+='30';
+                noMatricula+=carrera.num*10;
+                console.log(noMatricula);
+                var numAlumnos = grupo.alumnos.length;
+                noMatricula+=numAlumnos<10?'0'+numAlumnos:numAlumnos;
+                alumno.noMatricula = noMatricula;
+                console.log(chalk.red(alumno.noMatricula));*/
+
                 res.json(alumno);
             })
         });

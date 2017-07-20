@@ -2,17 +2,19 @@
 var express		= require('express');
 var http 	= require('http');
 var app 		= express();
+var multer = require('multer');
+var fs = require('fs');
 
 // Get dependencies
 var bodyParser	= require('body-parser');
 var path 		= require('path');
 var morgan		= require('morgan');
 var models = require('./app/models');
-var fileUpload = require('express-fileupload');
 
 // configure body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'src/dist')));
@@ -23,9 +25,10 @@ var io 		= require('socket.io').listen(server); //Websocket init
 
 /*JUST IN TEST*/
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 
@@ -45,8 +48,7 @@ var alumnoRouterDB = require('./server/routes/AlumnoRoutes')(io,models);
 var routerAlumno = alumnoRouterDB.router;
 var AlumnoModel = alumnoRouterDB.model;
 
-//express-fileupload
-app.use(fileUpload());
+
 
 // middleware to use for all requests before executing
 app.use(function(req, res, next) {

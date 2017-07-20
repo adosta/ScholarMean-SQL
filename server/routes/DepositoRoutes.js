@@ -164,15 +164,6 @@ module.exports = function(io, models){
         .then(depositos => {
 		        res.json(depositos);
 		});
-
-
-        /*.exec(function(err,Depositos) {
-            if (err){console.log(chalk.red('Error: '+err));res.send(err);}
-            else{
-            	console.log(Depositos)
-                res.json(Depositos);
-            }
-        });*/
     });
 
 	return router;
