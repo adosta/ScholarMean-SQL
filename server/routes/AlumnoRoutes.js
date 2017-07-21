@@ -185,7 +185,7 @@ module.exports = function(io, models){
         res.json(deletedAlumno);
       });
 
-});
+    });
     // GET /api/Alumno:id
     /*
     * Entrega toda la informacion concreta dado
@@ -287,9 +287,11 @@ module.exports = function(io, models){
         matricula = req.params.matricula;
         var existencia = new Array();
 
-        for(var i=0; j=2,i<=j; i++){
-            var existe = fs.existsSync('./documentos/'+tipo[i]+'/'+matricula+formato[i])
-            existencia.push({tipo:tipo[i],existe:existe});
+        for(var i=0; i<=1; i++){
+            for(var j=0; j<=2; j++){
+                var existe = fs.existsSync('./documentos/'+tipo[i]+'/'+matricula+formato[j])
+                existencia.push({tipo:tipo[i],existe:existe});
+            }
         }
         console.log(existencia);
         res.json(existencia);

@@ -5,6 +5,7 @@ export class Pago {
 			public _id?: string,
 			public monto?: number,
 			public fecha?: Date,
+			public concepto?: string,
 			public _alumno?:any,
 
 		){}
