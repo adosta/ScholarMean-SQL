@@ -127,6 +127,9 @@ module.exports=function(sequelize, DataTypes){
 	Semestre: {
 	    type: Sequelize.STRING
 	},
+	PreparatoriaEstado: {
+	    type: Sequelize.STRING
+	},
 	TurnoParaEntrevist: {
 	    type: Sequelize.STRING
 	},

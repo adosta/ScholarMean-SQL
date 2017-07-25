@@ -51,8 +51,8 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="">Sexo</label>
-					<select name="sexo" id="sexo" class="form-control" [(ngModel)]='nuevoAlumno.sexo'>
-						<option selected="selected" value="Seleccione...">Seleccione...</option>
+					<select name="Sexo" id="Sexo" class="form-control" [(ngModel)]='nuevoAlumno.Sexo'>
+						
 						<option value="MASCULINO">MASCULINO</option>
 						<option value="FEMENINO">FEMENINO</option>
 					</select>
@@ -60,7 +60,7 @@
 				<div class="form-group col-md-6">
 					<label for="">Estado Civil</label>
 					<select name="EstadoCivil" id="EstadoCivil" class="form-control" [(ngModel)]='nuevoAlumno.EstadoCivil'>
-						<option selected="selected" value="Seleccione...">Seleccione...</option>
+						
 						<option value="SOLTERO">SOLTERO</option>
 						<option value="CASADO">CASADO</option>
 						<option value="DIVORCIADO">DIVORCIADO</option>
@@ -72,7 +72,7 @@
 				<div class="form-group col-md-6">
 					<label for="">Numero de hijos</label>
 					<select name="NumHijos" id="NumHijos" class="form-control" [(ngModel)]='nuevoAlumno.NumHijos'>
-						<option selected="selected" value="Seleccione...">Seleccione...</option>
+						
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -93,15 +93,17 @@
 					<input type="text" class="form-control" id="Curp" name="Curp" placeholder="Curp"
 					[(ngModel)]='nuevoAlumno.Curp' #Curp='ngModel' autocomplete="off">
 				</div>
+				
 				<div class="form-group col-md-6">
 					<label for="">RFC</label>
 					<input type="text" class="form-control" id="RFC" name="RFC" placeholder="RFC"
 					[(ngModel)]='nuevoAlumno.RFC' #RFC='ngModel' autocomplete="off">
 				</div>
+
 				<div class="form-group col-md-6">
 					<label for="">¿Perteneces a alguna etnia o grupo indígena reconocido?</label>
 					<select name="GrupoEtnico" id="GrupoEtnico" class="form-control" [(ngModel)]='nuevoAlumno.GrupoEtnico'>
-						<option selected="selected" value="Seleccione...">Seleccione...</option>
+						
 						<option value="Seri">Seri</option>
 						<option value="Yaqui">Yaqui</option>
 						<option value="Opata">Opata</option>
@@ -116,12 +118,12 @@
 				<div class="form-group col-md-6">
 					<label for="">¿Trabaja usted en alguna empresa? En caso afirmativo, indíquela por favor</label>
 					<input type="text" class="form-control" id="TrabajoDeAlumno" name="TrabajoDeAlumno" placeholder="Nombre del Trabajo"
-					[(ngModel)]='nuevoAlumno.RFC' #RFC='ngModel' autocomplete="off">
+					[(ngModel)]='nuevoAlumno.TrabajoDeAlumno' #TrabajoDeAlumno='ngModel' autocomplete="off">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="">Número de dependientes económicos</label>
 					<select name="NumDependientes" id="NumDependientes" class="form-control" [(ngModel)]='nuevoAlumno.NumDependientes'>
-						<option selected="selected" value="Seleccione...">Seleccione...</option>
+						
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -148,40 +150,40 @@
 				<div class="form-group col-md-6">
 					<label for="">Estado</label>
 					<select name="Estado" id="Estado" class="form-control" [(ngModel)]='nuevoAlumno.Estado'>
-					<option value="1">AGUASCALIENTES</option>
-					<option value="2">BAJA CALIFORNIA NORTE</option>
-					<option value="3">BAJA CALIFORNIA SUR</option>
-					<option value="4">CAMPECHE</option>
-					<option value="5">COAHUILA</option>
-					<option value="6">COLIMA</option>
-					<option value="7">CHIAPAS</option>
-					<option value="8">CHIHUAHUA</option>
-					<option value="9">DISTRITO FEDERAL</option>
-					<option value="10">DURANGO</option>
-					<option value="11">GUANAJUATO</option>
-					<option value="12">GUERRERO</option>
-					<option value="13">HIDALGO</option>
-					<option value="14">JALISCO</option>
-					<option value="15">MEXICO</option>
-					<option value="16">MICHOACAN</option>
-					<option value="17">MORELOS</option>
-					<option value="18">NAYARIT</option>
-					<option value="19">NUEVO LEON</option>
-					<option value="20">OAXACA</option>
-					<option value="21">PUEBLA</option>
-					<option value="22">QUERETARO</option>
-					<option value="23">QUINTANA ROO</option>
-					<option value="24">SAN LUIS POTOSI</option>
-					<option value="25">SINALOA</option>
-					<option value="26">SONORA</option>
-					<option value="27">TABASCO</option>
-					<option value="28">TAMAULIPAS</option>
-					<option value="29">TLAXCALA</option>
-					<option value="30">VERACRUZ</option>
-					<option value="31">YUCATAN</option>
-					<option value="32">ZACATECAS</option>
-					<option value="33">NAC. EXTRANJERO</option>
-					<option selected="selected" value="Seleccione...">Seleccione...</option>
+					<option value="AGUASCALIENTES">AGUASCALIENTES</option>
+					<option value="BAJA CALIFORNIA NORTE">BAJA CALIFORNIA NORTE</option>
+					<option value="BAJA CALIFORNIA SUR">BAJA CALIFORNIA SUR</option>
+					<option value="CAMPECHE">CAMPECHE</option>
+					<option value="COAHUILA">COAHUILA</option>
+					<option value="COLIMA">COLIMA</option>
+					<option value="CHIAPAS">CHIAPAS</option>
+					<option value="CHIHUAHUA">CHIHUAHUA</option>
+					<option value="DISTRITO FEDERAL">DISTRITO FEDERAL</option>
+					<option value="DURANGO">DURANGO</option>
+					<option value="GUANAJUATO">GUANAJUATO</option>
+					<option value="GUERRERO">GUERRERO</option>
+					<option value="HIDALGO">HIDALGO</option>
+					<option value="JALISCO">JALISCO</option>
+					<option value="MEXICO">MEXICO</option>
+					<option value="MICHOACAN">MICHOACAN</option>
+					<option value="MORELOS">MORELOS</option>
+					<option value="NAYARIT">NAYARIT</option>
+					<option value="NUEVO LEON">NUEVO LEON</option>
+					<option value="OAXACA">OAXACA</option>
+					<option value="PUEBLA">PUEBLA</option>
+					<option value="QUERETARO">QUERETARO</option>
+					<option value="QUINTANA ROO">QUINTANA ROO</option>
+					<option value="SAN LUIS POTOSI">SAN LUIS POTOSI</option>
+					<option value="SINALOA">SINALOA</option>
+					<option value="SONORA">SONORA</option>
+					<option value="TABASCO">TABASCO</option>
+					<option value="TAMAULIPAS">TAMAULIPAS</option>
+					<option value="TLAXCALA">TLAXCALA</option>
+					<option value="VERACRUZ">VERACRUZ</option>
+					<option value="YUCATAN">YUCATAN</option>
+					<option value="ZACATECAS">ZACATECAS</option>
+					<option value="NAC. EXTRANJERO">NAC. EXTRANJERO</option>
+				
 
 				</select>
 
@@ -192,12 +194,29 @@
 					[(ngModel)]='nuevoAlumno.Pais' #Pais='ngModel' autocomplete="off">
 				</div>
 				<div class="form-group col-md-6">
-					<label for="">¿Eres Extranjero?</label>
+					<label for="">¿Eres Extranjero?</label><br>
 					
+						<input id="Extranjero1" type="radio" name="Extranjero" value="SI" 
+						[(ngModel)]='nuevoAlumno.Extranjero' #Extranjero='ngModel'/>
+						<label for="Extranjero1">SI</label>
+						 <input id="Extranjero2" type="radio" name="Extranjero" value="NO" checked="checked" 
+						[(ngModel)]='nuevoAlumno.Extranjero' #Extranjero='ngModel' />
+						<label for="Extranjero2">NO</label>
+					
+
 				</div>
 				<div class="form-group col-md-6">
 					<label for="">En caso de tener nacionalidad extranjera, ¿Tienes padre o madre mexicano? </label>
 					
+						<input id="PadresExtranjeros1" type="radio" name="PadresExtranjeros" value="SI" 
+						[(ngModel)]='nuevoAlumno.PadresExtranjeros' #PadresExtranjeros='ngModel'/>
+						<label for="PadresExtranjeros1">SI</label>
+						<input id="PadresExtranjeros2" type="radio" name="PadresExtranjeros" value="NO" 
+						[(ngModel)]='nuevoAlumno.PadresExtranjeros' #PadresExtranjeros='ngModel'/>
+						<label for="PadresExtranjeros2">NO</label>
+						<input id="PadresExtranjeros3" type="radio" name="PadresExtranjeros" value="NO APLICA" checked="checked" [(ngModel)]='nuevoAlumno.PadresExtranjeros' #PadresExtranjeros='ngModel'/>
+						<label for="PadresExtranjeros3">NO APLICA</label>
+
 				</div>
 
 				<legend>Informacion de salud</legend>
@@ -214,7 +233,7 @@
 				<div class="form-group col-md-6">
 					<label for="">Tipo de Sangre</label>
 					<select name="TipoSangre" id="" class="form-control" [(ngModel)]='nuevoAlumno.TipoSangre'>
-					<option selected="selected" value="Seleccione...">Seleccione...</option>
+					
 					<option value="A+">A+</option>
 					<option value="A-">A-</option>
 					<option value="AB+">AB+</option>
@@ -230,7 +249,7 @@
 				<div class="form-group col-md-6">
 					<label for="">Antecedentes médicos</label>
 					<select name="AntecedMedicos" id=""  class="form-control" [(ngModel)]='nuevoAlumno.AntecedMedicos'>
-					<option selected="selected" value="Seleccione...">Seleccione...</option>
+					
 					<option value="FAMILIAR DIABETICO">FAMILIAR DIABETICO</option>
 					<option value="FAMILIAR HIPERTENSO">FAMILIAR HIPERTENSO</option>
 					<option value="FAMILIAR CARDIACO">FAMILIAR CARDIACO</option>
@@ -255,7 +274,7 @@
 					<option value="Cognito Intelectual">Cognito Intelectual</option>
 					<option value="Psicosocial">Psicosocial</option>
 					<option value="Otra">Otra</option>
-					<option selected="selected" value="Ninguna">Ninguna</option>
+					<option value="Ninguna">Ninguna</option>
 
 				</select>
 
@@ -265,6 +284,7 @@
 					<input type="text" class="form-control" id="" name="NumSeguroSocial" placeholder="Numero de SeguroSocial"
 					[(ngModel)]='nuevoAlumno.NumSeguroSocial' #NumSeguroSocial='ngModel' autocomplete="off">
 				</div>
+				<strong>En caso de no contar con Número de Seguridad Social del IMSS.<br> Da clic </strong> <a href="https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS;JSESSIONIDASEGEXTERNO=tjQJuSdcoxlZV0K5aJe8K0fAH7u0MWzWE0MYSn4fIdjYmiOkYtlI!-458025143" target="_blank"> <strong>AQUI</strong></a>
 
 				<legend>Domicilio Particular</legend>
 				<div class="form-group col-md-6">
@@ -317,290 +337,329 @@
 
 				<legend>Escuela de Procedencia</legend>
 				<div class="form-group col-md-6">
+					<label for="">Estado de la escuela de procedencia</label>
+					<select name="PreparatoriaEstado" id="PreparatoriaEstado" class="form-control" 
+					[(ngModel)]='nuevoAlumno.PreparatoriaEstado'>
+					<option value="AGUASCALIENTES">AGUASCALIENTES</option>
+					<option value="BAJA CALIFORNIA NORTE">BAJA CALIFORNIA NORTE</option>
+					<option value="BAJA CALIFORNIA SUR">BAJA CALIFORNIA SUR</option>
+					<option value="CAMPECHE">CAMPECHE</option>
+					<option value="COAHUILA">COAHUILA</option>
+					<option value="COLIMA">COLIMA</option>
+					<option value="CHIAPAS">CHIAPAS</option>
+					<option value="CHIHUAHUA">CHIHUAHUA</option>
+					<option value="DISTRITO FEDERAL">DISTRITO FEDERAL</option>
+					<option value="DURANGO">DURANGO</option>
+					<option value="GUANAJUATO">GUANAJUATO</option>
+					<option value="GUERRERO">GUERRERO</option>
+					<option value="HIDALGO">HIDALGO</option>
+					<option value="JALISCO">JALISCO</option>
+					<option value="MEXICO">MEXICO</option>
+					<option value="MICHOACAN">MICHOACAN</option>
+					<option value="MORELOS">MORELOS</option>
+					<option value="NAYARIT">NAYARIT</option>
+					<option value="NUEVO LEON">NUEVO LEON</option>
+					<option value="OAXACA">OAXACA</option>
+					<option value="PUEBLA">PUEBLA</option>
+					<option value="QUERETARO">QUERETARO</option>
+					<option value="QUINTANA ROO">QUINTANA ROO</option>
+					<option value="SAN LUIS POTOSI">SAN LUIS POTOSI</option>
+					<option value="SINALOA">SINALOA</option>
+					<option value="SONORA">SONORA</option>
+					<option value="TABASCO">TABASCO</option>
+					<option value="TAMAULIPAS">TAMAULIPAS</option>
+					<option value="TLAXCALA">TLAXCALA</option>
+					<option value="VERACRUZ">VERACRUZ</option>
+					<option value="YUCATAN">YUCATAN</option>
+					<option value="ZACATECAS">ZACATECAS</option>
+					<option value="NAC. EXTRANJERO">NAC. EXTRANJERO</option>			
+				</select>
+				</div>
+				<div class="form-group col-md-6">
 					<label for="">Preparatoria</label>
 					<select name="Preparatoria" id="" class="form-control" [(ngModel)]='nuevoAlumno.Preparatoria'>
-					<option value="270">ACADEMIA DE POLICIA DE CAJEME</option>
-					<option value="121">BEDR 29</option>
-					<option value="122">BEDR 71</option>
-					<option value="123">BEDR 88</option>
-					<option value="114">CBTA 132</option>
-					<option value="115">CBTA 161</option>
-					<option value="116">CBTA 197</option>
-					<option value="110">CBTA 26</option>
-					<option value="118">CBTA 262</option>
-					<option value="119">CBTA 263</option>
-					<option value="120">CBTA 264</option>
-					<option value="111">CBTA 38</option>
-					<option value="112">CBTA 53</option>
-					<option value="117">CBTA 53 EXTENSION MAZATLAN</option>
-					<option value="113">CBTA 97</option>
-					<option value="100">CBTIS No. 106</option>
-					<option value="93">CBTIS No. 11</option>
-					<option value="101">CBTIS No. 129</option>
-					<option value="102">CBTIS No. 132</option>
-					<option value="103">CBTIS No. 188</option>
-					<option value="104">CBTIS No. 206</option>
-					<option value="105">CBTIS No. 207</option>
-					<option value="94">CBTIS No. 33</option>
-					<option value="95">CBTIS No. 37</option>
-					<option value="96">CBTIS No. 40</option>
-					<option value="97">CBTIS No. 63</option>
-					<option value="98">CBTIS No. 64</option>
-					<option value="99">CBTIS No. 81</option>
-					<option value="209">CEBACH</option>
-					<option value="246">CECATI No. 118</option>
-					<option value="247">CECATI No. 124</option>
-					<option value="244">CECATI No. 23</option>
-					<option value="243">CECATI No. 69</option>
-					<option value="245">CECATI No. 94</option>
-					<option value="1">CECYTES BACAME NUEVO</option>
-					<option value="2">CECYTES BACOBAMPO</option>
-					<option value="3">CECYTES BACUM</option>
-					<option value="4">CECYTES BANAMICHI</option>
-					<option value="5">CECYTES BENJAMIN HILL</option>
-					<option value="6">CECYTES CAJEME</option>
-					<option value="7">CECYTES EJIDO 24 DE FEBRERO</option>
-					<option value="8">CECYTES EJIDO. FCO. JAVIER MINA</option>
-					<option value="9">CECYTES ESPERANZA</option>
-					<option value="10">CECYTES GRANADOS</option>
-					<option value="11">CECYTES HERMOSILLO I LA MANGA</option>
-					<option value="12">CECYTES HERMOSILLO II A ALTO VALLE</option>
-					<option value="13">CECYTES HERMOSILLO III EL MARIACHI</option>
-					<option value="14">CECYTES HERMOSILLO IV JUSTO SIERRA</option>
-					<option value="15">CECYTES HERMOSILLO V PUEBLITOS</option>
-					<option value="16">CECYTES ING. CARLOS RENE LEYVA BARRERA BACAME</option>
-					<option value="17">CECYTES LUIS B. SANCHEZ</option>
-					<option value="18">CECYTES NAVOJOA</option>
-					<option value="19">CECYTES NOGALES    </option>
-					<option value="20">CECYTES NOGALES II </option>
-					<option value="21">CECYTES PLUTARCO ELIAS CALLES</option>
-					<option value="22">CECYTES POBLADO MIGUEL ALEMAN</option>
-					<option value="23">CECYTES SAHUARIPA</option>
-					<option value="24">CECYTES SAN LUIS RIO COLORADO</option>
-					<option value="25">CECYTES SAN PEDRO EL SAUCITO</option>
-					<option value="26">CECYTES SANTA ANA</option>
-					<option value="135">CENTRO DE CIENCIAS Y HUMANIDADES CAJEME</option>
-					<option value="157">CENTRO DE EDUCACION BILING&#220;E</option>
-					<option value="271">CENTRO DE ESTUDIOS CAMPOS A.C.</option>
-					<option value="281">CENTRO DE ESTUDIOS TECNOLOGICOS Y DE CAPACITACION EN COMPUTACION, A.C.</option>
-					<option value="183">CENTRO DE FORMACION PARA LA VIDA DIARIA A.C. (EEVA)</option>
-					<option value="278">CENTRO EDUCACE A.C.</option>
-					<option value="155">CENTRO EDUCATIVO CDI ALFAES</option>
-					<option value="149">CENTRO ESCOLAR CAMPO GRANDE A.C.</option>
-					<option value="232">CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS</option>
-					<option value="175">CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS, A.C.</option>
-					<option value="139">CESIN CENTRO DE ESTUDIOS DE NAVOJOA</option>
-					<option value="107">CETIS No. 128</option>
-					<option value="106">CETIS No. 69</option>
-					<option value="124">CETMAR 03</option>
-					<option value="125">CETMAR 14</option>
-					<option value="126">CETMAR 22</option>
-					<option value="127">CETMAR 32</option>
-					<option value="54">COBACH ALAMOS</option>
-					<option value="55">COBACH ALVARO OBREGON SALIDO</option>
-					<option value="56">COBACH BAHIA DE KINO</option>
-					<option value="57">COBACH CABORCA</option>
-					<option value="53">COBACH EMPALME</option>
-					<option value="58">COBACH ETCHOJOA</option>
-					<option value="59">COBACH EUSEBIO FRANCISCO KINO</option>
-					<option value="60">COBACH FAUSTINO FELIX SERNA</option>
-					<option value="61">COBACH HERMOSILLO V</option>
-					<option value="62">COBACH JOSE MARIA MAYTORENA TAPIA</option>
-					<option value="63">COBACH NACOZARI DE GARCIA</option>
-					<option value="64">COBACH NAVOJOA</option>
-					<option value="65">COBACH NOGALES</option>
-					<option value="66">COBACH NUEVO HERMOSILLO </option>
-					<option value="67">COBACH OBREGON I</option>
-					<option value="68">COBACH OBREGON II</option>
-					<option value="69">COBACH OBREGON III </option>
-					<option value="70">COBACH PLUTALCO ELIAS CALLES</option>
-					<option value="71">COBACH PROFR. ERNESTO LOPEZ RIESGO</option>
-					<option value="72">COBACH PUEBLO YAQUI</option>
-					<option value="73">COBACH PUERTA REAL</option>
-					<option value="74">COBACH PUERTO PEÑASCO</option>
-					<option value="75">COBACH QUETCHEHUECA</option>
-					<option value="51">COBACH REFORMA</option>
-					<option value="76">COBACH SAN IGNACIO RIO MUERTO</option>
-					<option value="77">COBACH SAN LUIS RIO COLORADO</option>
-					<option value="78">COBACH SONOYTA</option>
-					<option value="52">COBACH VILLA DE SERIS</option>
-					<option value="263">COLEGIO AMERICANO DE SAN CARLOS, S.C.</option>
-					<option value="152">COLEGIO ARCE</option>
-					<option value="163">COLEGIO BENEMERITO DE LAS AMERICAS</option>
-					<option value="267">COLEGIO BENEMERITO DE LAS AMERICAS S.C.</option>
-					<option value="219">COLEGIO BOSCO JUAN NAVARRETE Y GUERRERO</option>
-					<option value="227">COLEGIO CABRERA</option>
-					<option value="211">COLEGIO DE BACHILLERES POR COOPERACION JUVENTUD DE AMERICA, A.C.</option>
-					<option value="129">COLEGIO DE LA VERA-CRUZ TERESIANO</option>
-					<option value="279">COLEGIO DEL MAYO, S.C.</option>
-					<option value="262">COLEGIO DEL PACIFICO</option>
-					<option value="143">COLEGIO DR. BRAULIO PEREZ MARCIO</option>
-					<option value="156">COLEGIO EDIA</option>
-					<option value="215">COLEGIO EDUCATIVO UNIVERSITARIO A.C.</option>
-					<option value="147">COLEGIO EMAUS</option>
-					<option value="128">COLEGIO ERICKSON</option>
-					<option value="136">COLEGIO EXCELENCIA</option>
-					<option value="196">COLEGIO FRANNDAM S.C.</option>
-					<option value="221">COLEGIO GUADALUPANO DE BACHILLERATO, A.C.</option>
-					<option value="159">COLEGIO ILUSTRACION, A.C.</option>
-					<option value="193">COLEGIO JUAN BOSCO DE NOGALES, A.C.</option>
-					<option value="154">COLEGIO LUX, A.C. </option>
-					<option value="181">COLEGIO MARTINIE, S.C.</option>
-					<option value="214">COLEGIO MARTINIE, S.C.</option>
-					<option value="179">COLEGIO MIRANDA</option>
-					<option value="153">COLEGIO MUÑOZ S.C. EL LLANO</option>
-					<option value="264">COLEGIO MUÑOZ S.C. TURNO V/N</option>
-					<option value="210">COLEGIO NACIONAL DE CAPACITACION Y BACHILLERATO (CNCYB)</option>
-					<option value="145">COLEGIO NOGALES</option>
-					<option value="180">COLEGIO NOGALES</option>
-					<option value="269">COLEGIO NOVEL DE CAPACITACION INTENSIVA</option>
-					<option value="131">COLEGIO PROGRESO</option>
-					<option value="204">COLEGIO PROGRESO</option>
-					<option value="146">COLEGIO REGIS</option>
-					<option value="160">COLEGIO SONORA DE CD. OBREGON S.C.</option>
-					<option value="164">COLEGIO UNIVERSITARIO DE BACHILLERES</option>
-					<option value="138">COLEGIO VIZCAYA</option>
-					<option value="142">COLEGIO VIZCAYA UNIDAD GUAYMAS</option>
-					<option value="170">COLEGIO YOLANDA ANDRADE</option>
-					<option value="79">CONALEP PLANTEL AGUA PRIETA</option>
-					<option value="80">CONALEP PLANTEL CABORCA</option>
-					<option value="81">CONALEP PLANTEL CD. OBREGON</option>
-					<option value="82">CONALEP PLANTEL EMPALME</option>
-					<option value="83">CONALEP PLANTEL GUAYMAS GRAL. P. ELIAS CALLES</option>
-					<option value="84">CONALEP PLANTEL HERMOSILLO I</option>
-					<option value="85">CONALEP PLANTEL HERMOSILLO II</option>
-					<option value="86">CONALEP PLANTEL HERMOSILLO III </option>
-					<option value="87">CONALEP PLANTEL HUATABAMPO ALVARO OBREGON</option>
-					<option value="88">CONALEP PLANTEL MAGDALENA</option>
-					<option value="89">CONALEP PLANTEL NACOZARI DE GARCIA</option>
-					<option value="90">CONALEP PLANTEL NAVOJOA</option>
-					<option value="91">CONALEP PLANTEL NOGALES</option>
-					<option value="92">CONALEP PLANTEL SAN LUIS RIO COLORADO</option>
-					<option value="27">EMSAD BACERAC</option>
-					<option value="28">EMSAD BAHIA DE LOBOS</option>
-					<option value="29">EMSAD BASIROA</option>
-					<option value="30">EMSAD BUAYSIACOBE</option>
-					<option value="31">EMSAD CARBO</option>
-					<option value="32">EMSAD CUMPAS</option>
-					<option value="33">EMSAD ESQUEDA</option>
-					<option value="34">EMSAD GOLFO DE SANTA CLARA</option>
-					<option value="35">EMSAD JUPARE</option>
-					<option value="36">EMSAD LOS TANQUES</option>
-					<option value="37">EMSAD MAQUIPO</option>
-					<option value="38">EMSAD MASIACA</option>
-					<option value="39">EMSAD NACO</option>
-					<option value="40">EMSAD PESQUEIRA</option>
-					<option value="41">EMSAD POTAM</option>
-					<option value="42">EMSAD PUERTO LIBERTAD</option>
-					<option value="43">EMSAD QUIRIEGO</option>
-					<option value="44">EMSAD ROSARIO TESOPACO</option>
-					<option value="45">EMSAD SAN PEDRO DE LA CUEVA</option>
-					<option value="46">EMSAD SANTA MARIA DEL BUARAJE</option>
-					<option value="47">EMSAD SUAQUI GRANDE</option>
-					<option value="48">EMSAD TIERRA BLANCA</option>
-					<option value="49">EMSAD TUBUTAMA</option>
-					<option value="50">EMSAD YECORA</option>
-					<option value="275">ESCUELA DE ENFERMERIA DEL IMSS</option>
-					<option value="168">ESCUELA DE ENFERMERIA DEL IMSS CD. OBREGON</option>
-					<option value="167">ESCUELA DE ENFERMERIA DEL IMSS HERMOSILLO</option>
-					<option value="109">ESCUELA DE ENFERMERIA PABLO DE ANDA</option>
-					<option value="166">ESCUELA DE ENFERMERIA PABLO DE ANDA A.C. NOGALES</option>
-					<option value="108">ESCUELA PITIC</option>
-					<option value="199">ESCUELA PREPARATORIA PROFR. MIGUEL CASTILLO OSUNA</option>
-					<option value="190">ESCUELA PREPARATORIA DE UNIVERSIDAD UNILIDER</option>
-					<option value="212">ESCUELA PREPARATORIA POR COOPERACION “GENERAL ENRIQUE ESQUEDA”, A.C.</option>
-					<option value="235">FUNDACION PBRO. LUIS LOPEZ ROMO</option>
-					<option value="205">ICADES, S.C.</option>
-					<option value="240">ICATSON AGUA PRIETA</option>
-					<option value="241">ICATSON CABORCA</option>
-					<option value="238">ICATSON CAJEME</option>
-					<option value="237">ICATSON CANANEA</option>
-					<option value="242">ICATSON EMPALME</option>
-					<option value="236">ICATSON HERMOSILLO</option>
-					<option value="239">ICATSON NAVOJOA</option>
-					<option value="177">ICES</option>
-					<option value="207">ICSON</option>
-					<option value="165">INSTITUTO ANGLO MEXICANO, A.C.</option>
-					<option value="200">INSTITUTO BICULTURAL JULIETA E. MANRIQUEZ</option>
-					<option value="201">INSTITUTO CABRERA</option>
-					<option value="184">INSTITUTO DE ASISTENTE EDUCATIVO AC. (INASED)</option>
-					<option value="280">INSTITUTO DE ASISTENTES EDUCATIVOS DE SONORA A.C.</option>
-					<option value="274">INSTITUTO DE CAPACITACION SUTSPES</option>
-					<option value="272">INSTITUTO DE CAPACITACION SUTSPES, UNIDAD GUAYMAS</option>
-					<option value="203">INSTITUTO DE CIENCIAS Y EDUCACION SUPERIOR, A.C</option>
-					<option value="268">INSTITUTO DE LA MODA</option>
-					<option value="213">INSTITUTO DEL COBRE S.C.</option>
-					<option value="251">INSTITUTO DEL OCCIDENTE S.C.</option>
-					<option value="252">INSTITUTO EDUCATIVO  HERMOSILLO S.C.</option>
-					<option value="234">INSTITUTO EDUCATIVO LOZANO CLARK</option>
-					<option value="137">INSTITUTO GALY SAVATER</option>
-					<option value="161">INSTITUTO KINO DE SAN LUIS, A.C.</option>
-					<option value="130">INSTITUTO LA SALLE</option>
-					<option value="169">INSTITUTO LEONS</option>
-					<option value="133">INSTITUTO LIBERTAD JOSE VASCONCELOS</option>
-					<option value="141">INSTITUTO MIRAVALLE</option>
-					<option value="140">INSTITUTO REGIONAL DE GUAYMAS</option>
-					<option value="144">INSTITUTO REGIONAL DE GUAYMAS UNIDAD ALTARES</option>
-					<option value="134">INSTITUTO REGIONAL DE GUAYMAS-UNIDAD OBREGON</option>
-					<option value="228">INSTITUTO SIRAITARE, S.C.</option>
-					<option value="276">INSTITUTO SUPERIOR DE SEGURIDAD PUBLICA DEL ESTADO</option>
-					<option value="273">INSTITUTO TECNOLOGICO DENTAL</option>
-					<option value="189">INSTITUTO TERESITA MUÑOZ</option>
-					<option value="150">INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL COLOSIO</option>
-					<option value="151">INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL PITIC</option>
-					<option value="223">INSTITUTO WEBSTER, A.C.</option>
-					<option value="174">LICEO SAN AGUSTIN, A.C.</option>
-					<option value="148">LICEO THEZIA</option>
-					<option value="208">MARIA YOLANDA ANDRADE ANTELO</option>
-					<option value="195">MONTESSOURI CORHALLI</option>
-					<option value="185">MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO NORTE</option>
-					<option value="186">MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO SUR</option>
-					<option value="277">MUSIC EDUCATION CENTER</option>
-					<option value="173">PREPARARORIA GRIMAC AGUA PRIETA</option>
-					<option value="202">PREPARARORIA TECNOLOGICA RIO COLORADO</option>
-					<option value="255">PREPARATORIA   UNIDEP, UNIDAD EMPALME</option>
-					<option value="258">PREPARATORIA  UNIDEP, UNIDAD AGUA PRIETA</option>
-					<option value="254">PREPARATORIA  UNIDEP, UNIDAD GUAYMAS</option>
-					<option value="256">PREPARATORIA  UNIDEP, UNIDAD NAVOJOA</option>
-					<option value="257">PREPARATORIA  UNIDEP, UNIDAD NOGALES</option>
-					<option value="261">PREPARATORIA  UNIDEP, UNIDAD OBREGON</option>
-					<option value="259">PREPARATORIA  UNIDEP, UNIDAD PUERTO PEÑASCO</option>
-					<option value="260">PREPARATORIA  UNIDEP, UNIDAD SLRC</option>
-					<option value="206">PREPARATORIA CIMA I.A.P.</option>
-					<option value="191">PREPARATORIA COLEGIO NAVARRETE</option>
-					<option value="266">PREPARATORIA DE LA UVM NOGALES</option>
-					<option value="192">PREPARATORIA DEL PACIFICO ICAM S.C.</option>
-					<option value="198">PREPARATORIA DR. BRAULIO PEREZ MARCIO</option>
-					<option value="233">PREPARATORIA EDUCATIVA PIRAMIDE DEL SOL</option>
-					<option value="216">PREPARATORIA ESPINOSA, S.C.</option>
-					<option value="172">PREPARATORIA GRIMAC NOGALES</option>
-					<option value="171">PREPARATORIA GRIMAC SLRC</option>
-					<option value="225">PREPARATORIA GRIMAC, A.C. </option>
-					<option value="226">PREPARATORIA GRIMAC, A.C.  EXT. IMURIS</option>
-					<option value="158">PREPARATORIA HNOS. FLORES MAGON</option>
-					<option value="187">PREPARATORIA INSTITUTO SISTEMA EMPRESA INTELIGENTE</option>
-					<option value="265">PREPARATORIA INTERAMERICANA DE GUAYMAS</option>
-					<option value="249">PREPARATORIA KINO</option>
-					<option value="230">PREPARATORIA KINO CABORCA</option>
-					<option value="229">PREPARATORIA KINO MAGDALENA</option>
-					<option value="250">PREPARATORIA KINO UNIDAD GUAYMAS</option>
-					<option value="197">PREPARATORIA LARREA</option>
-					<option value="218">PREPARATORIA METROPOLITANA DE CAJEME, S.C.</option>
-					<option value="217">PREPARATORIA NOCTURNA ENRIQUE  C. REBSAMEN, A.C.</option>
-					<option value="132">PREPARATORIA OBREGON</option>
-					<option value="224">PREPARATORIA PEDRO DE GANTE</option>
-					<option value="222">PREPARATORIA POR COOPERACION DE EL CITAVARO</option>
-					<option value="231">PREPARATORIA POR COOPERACION SIN FRONTERAS</option>
-					<option value="178">PREPARATORIA SAN JUAN BAUTISTA DE LA SALLE</option>
-					<option value="220">PREPARATORIA SANTA FE, S.C.</option>
-					<option value="188">PREPARATORIA SENDA 2000</option>
-					<option value="176">PREPARATORIA UNEPROP</option>
-					<option value="253">PREPARATORIA UNIDEP, UNIDAD HERMOSILLO</option>
-					<option value="182">PREPARATORIA UNO NOGALES SONORA A.C.</option>
-					<option value="162">SISTEMA EDUCATIVO MUÑOZ</option>
-					<option value="194">SISTEMA EDUCATIVO MUÑOZ UNIDAD NOGALES</option>
-					<option value="248">UVM</option>
-					<option selected="selected" value="Seleccione...">Seleccione...</option>
+					<option value="ACADEMIA DE POLICIA DE CAJEME">ACADEMIA DE POLICIA DE CAJEME</option>
+					<option value="BEDR 29">BEDR 29</option>
+					<option value="BEDR 71">BEDR 71</option>
+					<option value="BEDR 88">BEDR 88</option>
+					<option value="CBTA 132">CBTA 132</option>
+					<option value="CBTA 161">CBTA 161</option>
+					<option value="CBTA 197">CBTA 197</option>
+					<option value="CBTA 26">CBTA 26</option>
+					<option value="CBTA 262">CBTA 262</option>
+					<option value="CBTA 263">CBTA 263</option>
+					<option value="CBTA 264">CBTA 264</option>
+					<option value="CBTA 38">CBTA 38</option>
+					<option value="CBTA 53">CBTA 53</option>
+					<option value="CBTA 53 EXTENSION MAZATLAN">CBTA 53 EXTENSION MAZATLAN</option>
+					<option value="CBTA 97">CBTA 97</option>
+					<option value="CBTIS No. 106">CBTIS No. 106</option>
+					<option value="CBTIS No. 11">CBTIS No. 11</option>
+					<option value="CBTIS No. 129">CBTIS No. 129</option>
+					<option value="CBTIS No. 132">CBTIS No. 132</option>
+					<option value="CBTIS No. 188">CBTIS No. 188</option>
+					<option value="CBTIS No. 206">CBTIS No. 206</option>
+					<option value="CBTIS No. 207">CBTIS No. 207</option>
+					<option value="CBTIS No. 33">CBTIS No. 33</option>
+					<option value="CBTIS No. 37">CBTIS No. 37</option>
+					<option value="CBTIS No. 40">CBTIS No. 40</option>
+					<option value="CBTIS No. 63">CBTIS No. 63</option>
+					<option value="CBTIS No. 64">CBTIS No. 64</option>
+					<option value="CBTIS No. 81">CBTIS No. 81</option>
+					<option value="CEBACH">CEBACH</option>
+					<option value="CECATI No. 118">CECATI No. 118</option>
+					<option value="CECATI No. 124">CECATI No. 124</option>
+					<option value="CECATI No. 23">CECATI No. 23</option>
+					<option value="CECATI No. 69">CECATI No. 69</option>
+					<option value="CECATI No. 94">CECATI No. 94</option>
+					<option value="CECYTES BACAME NUEVO">CECYTES BACAME NUEVO</option>
+					<option value="CECYTES BACOBAMPO">CECYTES BACOBAMPO</option>
+					<option value="CECYTES BACUM">CECYTES BACUM</option>
+					<option value="CECYTES BANAMICHI">CECYTES BANAMICHI</option>
+					<option value="CECYTES BENJAMIN HILL">CECYTES BENJAMIN HILL</option>
+					<option value="CECYTES CAJEME">CECYTES CAJEME</option>
+					<option value="CECYTES EJIDO 24 DE FEBRERO">CECYTES EJIDO 24 DE FEBRERO</option>
+					<option value="CECYTES EJIDO. FCO. JAVIER MINA">CECYTES EJIDO. FCO. JAVIER MINA</option>
+					<option value="CECYTES ESPERANZA">CECYTES ESPERANZA</option>
+					<option value="CECYTES GRANADOS">CECYTES GRANADOS</option>
+					<option value="CECYTES HERMOSILLO I LA MANGA">CECYTES HERMOSILLO I LA MANGA</option>
+					<option value="CECYTES HERMOSILLO II A ALTO VALLE">CECYTES HERMOSILLO II A ALTO VALLE</option>
+					<option value="CECYTES HERMOSILLO III EL MARIACHI">CECYTES HERMOSILLO III EL MARIACHI</option>
+					<option value="CECYTES HERMOSILLO IV JUSTO SIERRA">CECYTES HERMOSILLO IV JUSTO SIERRA</option>
+					<option value="CECYTES HERMOSILLO V PUEBLITOS">CECYTES HERMOSILLO V PUEBLITOS</option>
+					<option value="CECYTES ING. CARLOS RENE LEYVA BARRERA BACAME">CECYTES ING. CARLOS RENE LEYVA BARRERA BACAME</option>
+					<option value="CECYTES LUIS B. SANCHEZ">CECYTES LUIS B. SANCHEZ</option>
+					<option value="CECYTES NAVOJOA">CECYTES NAVOJOA</option>
+					<option value="CECYTES NOGALES">CECYTES NOGALES</option>
+					<option value="CECYTES NOGALES II">CECYTES NOGALES II</option>
+					<option value="CECYTES PLUTARCO ELIAS CALLES">CECYTES PLUTARCO ELIAS CALLES</option>
+					<option value="CECYTES POBLADO MIGUEL ALEMAN">CECYTES POBLADO MIGUEL ALEMAN</option>
+					<option value="CECYTES SAHUARIPA">CECYTES SAHUARIPA</option>
+					<option value="CECYTES SAN LUIS RIO COLORADO">CECYTES SAN LUIS RIO COLORADO</option>
+					<option value="CECYTES SAN PEDRO EL SAUCITO">CECYTES SAN PEDRO EL SAUCITO</option>
+					<option value="CECYTES SANTA ANA">CECYTES SANTA ANA</option>
+					<option value="CENTRO DE CIENCIAS Y HUMANIDADES CAJEME">CENTRO DE CIENCIAS Y HUMANIDADES CAJEME</option>
+					<option value="CENTRO DE EDUCACION BILINGUE">CENTRO DE EDUCACION BILING&#220;E</option>
+					<option value="CENTRO DE ESTUDIOS CAMPOS A.C.">CENTRO DE ESTUDIOS CAMPOS A.C.</option>
+					<option value="CENTRO DE ESTUDIOS TECNOLOGICOS Y DE CAPACITACION EN COMPUTACION, A.C.">CENTRO DE ESTUDIOS TECNOLOGICOS Y DE CAPACITACION EN COMPUTACION, A.C.</option>
+					<option value="CENTRO DE FORMACION PARA LA VIDA DIARIA A.C. (EEVA)">CENTRO DE FORMACION PARA LA VIDA DIARIA A.C. (EEVA)</option>
+					<option value="CENTRO EDUCACE A.C.">CENTRO EDUCACE A.C.</option>
+					<option value="CENTRO EDUCATIVO CDI ALFAES">CENTRO EDUCATIVO CDI ALFAES</option>
+					<option value="CENTRO ESCOLAR CAMPO GRANDE A.C.">CENTRO ESCOLAR CAMPO GRANDE A.C.</option>
+					<option value="CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS">CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS</option>
+					<option value="CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS, A.C.">CENTRO INTEGRAL DE EDUCACION MEDIA DE SAN LUIS, A.C.</option>
+					<option value="CESIN CENTRO DE ESTUDIOS DE NAVOJOA">CESIN CENTRO DE ESTUDIOS DE NAVOJOA</option>
+					<option value="CETIS No. 128">CETIS No. 128</option>
+					<option value="CETIS No. 69">CETIS No. 69</option>
+					<option value="CETMAR 03">CETMAR 03</option>
+					<option value="CETMAR 14">CETMAR 14</option>
+					<option value="CETMAR 22">CETMAR 22</option>
+					<option value="CETMAR 32">CETMAR 32</option>
+					<option value="COBACH ALAMOS">COBACH ALAMOS</option>
+					<option value="COBACH ALVARO OBREGON SALIDO">COBACH ALVARO OBREGON SALIDO</option>
+					<option value="COBACH BAHIA DE KINO">COBACH BAHIA DE KINO</option>
+					<option value="COBACH CABORCA">COBACH CABORCA</option>
+					<option value="COBACH EMPALME">COBACH EMPALME</option>
+					<option value="COBACH ETCHOJOA">COBACH ETCHOJOA</option>
+					<option value="COBACH EUSEBIO FRANCISCO KINO">COBACH EUSEBIO FRANCISCO KINO</option>
+					<option value="COBACH FAUSTINO FELIX SERNA">COBACH FAUSTINO FELIX SERNA</option>
+					<option value="COBACH HERMOSILLO">COBACH HERMOSILLO</option>
+					<option value="COBACH JOSE MARIA MAYTORENA TAPIA">COBACH JOSE MARIA MAYTORENA TAPIA</option>
+					<option value="COBACH NACOZARI DE GARCIA">COBACH NACOZARI DE GARCIA</option>
+					<option value="COBACH NAVOJOA">COBACH NAVOJOA</option>
+					<option value="COBACH NOGALES">COBACH NOGALES</option>
+					<option value="COBACH NUEVO HERMOSILLO">COBACH NUEVO HERMOSILLO </option>
+					<option value="COBACH OBREGON I">COBACH OBREGON I</option>
+					<option value="COBACH OBREGON II">COBACH OBREGON II</option>
+					<option value="COBACH OBREGON III">COBACH OBREGON III </option>
+					<option value="COBACH PLUTALCO ELIAS CALLES">COBACH PLUTALCO ELIAS CALLES</option>
+					<option value="COBACH PROFR. ERNESTO LOPEZ RIESGO">COBACH PROFR. ERNESTO LOPEZ RIESGO</option>
+					<option value="COBACH PUEBLO YAQUI">COBACH PUEBLO YAQUI</option>
+					<option value="COBACH PUERTA REAL">COBACH PUERTA REAL</option>
+					<option value="COBACH PUERTO PEÑASCO">COBACH PUERTO PEÑASCO</option>
+					<option value="COBACH QUETCHEHUECA">COBACH QUETCHEHUECA</option>
+					<option value="COBACH REFORMA">COBACH REFORMA</option>
+					<option value="COBACH SAN IGNACIO RIO MUERTO">COBACH SAN IGNACIO RIO MUERTO</option>
+					<option value="COBACH SAN LUIS RIO COLORADO">COBACH SAN LUIS RIO COLORADO</option>
+					<option value="COBACH SONOYTA">COBACH SONOYTA</option>
+					<option value="COBACH VILLA DE SERIS">COBACH VILLA DE SERIS</option>
+					<option value="COLEGIO AMERICANO DE SAN CARLOS, S.C.">COLEGIO AMERICANO DE SAN CARLOS, S.C.</option>
+					<option value="COLEGIO ARCE">COLEGIO ARCE</option>
+					<option value="COLEGIO BENEMERITO DE LAS AMERICAS">COLEGIO BENEMERITO DE LAS AMERICAS</option>
+					<option value="COLEGIO BENEMERITO DE LAS AMERICAS S.C.">COLEGIO BENEMERITO DE LAS AMERICAS S.C.</option>
+					<option value="COLEGIO BOSCO JUAN NAVARRETE Y GUERRERO">COLEGIO BOSCO JUAN NAVARRETE Y GUERRERO</option>
+					<option value="COLEGIO CABRERA">COLEGIO CABRERA</option>
+					<option value="COLEGIO DE BACHILLERES POR COOPERACION JUVENTUD DE AMERICA, A.C.">COLEGIO DE BACHILLERES POR COOPERACION JUVENTUD DE AMERICA, A.C.</option>
+					<option value="COLEGIO DE LA VERA-CRUZ TERESIANO">COLEGIO DE LA VERA-CRUZ TERESIANO</option>
+					<option value="COLEGIO DEL MAYO, S.C.">COLEGIO DEL MAYO, S.C.</option>
+					<option value="COLEGIO DEL PACIFICO">COLEGIO DEL PACIFICO</option>
+					<option value="COLEGIO DR. BRAULIO PEREZ MARCIO">COLEGIO DR. BRAULIO PEREZ MARCIO</option>
+					<option value="COLEGIO EDIA">COLEGIO EDIA</option>
+					<option value="COLEGIO EDUCATIVO UNIVERSITARIO A.C.">COLEGIO EDUCATIVO UNIVERSITARIO A.C.</option>
+					<option value="COLEGIO EMAUS">COLEGIO EMAUS</option>
+					<option value="COLEGIO ERICKSON">COLEGIO ERICKSON</option>
+					<option value="COLEGIO EXCELENCIA">COLEGIO EXCELENCIA</option>
+					<option value="COLEGIO FRANNDAM S.C.">COLEGIO FRANNDAM S.C.</option>
+					<option value="COLEGIO GUADALUPANO DE BACHILLERATO, A.C.">COLEGIO GUADALUPANO DE BACHILLERATO, A.C.</option>
+					<option value="COLEGIO ILUSTRACION, A.C.">COLEGIO ILUSTRACION, A.C.</option>
+					<option value="COLEGIO JUAN BOSCO DE NOGALES, A.C.">COLEGIO JUAN BOSCO DE NOGALES, A.C.</option>
+					<option value="COLEGIO LUX, A.C.">COLEGIO LUX, A.C. </option>
+					<option value="COLEGIO MARTINIE, S.C.">COLEGIO MARTINIE, S.C.</option>
+					<option value="COLEGIO MARTINIE, S.C.">COLEGIO MARTINIE, S.C.</option>
+					<option value="COLEGIO MIRANDA">COLEGIO MIRANDA</option>
+					<option value="COLEGIO MUÑOZ S.C. EL LLANO">COLEGIO MUÑOZ S.C. EL LLANO</option>
+					<option value="COLEGIO MUÑOZ S.C. TURNO V/N">COLEGIO MUÑOZ S.C. TURNO V/N</option>
+					<option value="COLEGIO NACIONAL DE CAPACITACION Y BACHILLERATO (CNCYB)">COLEGIO NACIONAL DE CAPACITACION Y BACHILLERATO (CNCYB)</option>
+					<option value="COLEGIO NOGALES">COLEGIO NOGALES</option>
+					<option value="COLEGIO NOGALES">COLEGIO NOGALES</option>
+					<option value="COLEGIO NOVEL DE CAPACITACION INTENSIVA">COLEGIO NOVEL DE CAPACITACION INTENSIVA</option>
+					<option value="COLEGIO PROGRESO">COLEGIO PROGRESO</option>
+					<option value="COLEGIO PROGRESO">COLEGIO PROGRESO</option>
+					<option value="COLEGIO REGIS">COLEGIO REGIS</option>
+					<option value="COLEGIO SONORA DE CD. OBREGON S.C.">COLEGIO SONORA DE CD. OBREGON S.C.</option>
+					<option value="COLEGIO UNIVERSITARIO DE BACHILLERES">COLEGIO UNIVERSITARIO DE BACHILLERES</option>
+					<option value="COLEGIO VIZCAYA">COLEGIO VIZCAYA</option>
+					<option value="COLEGIO VIZCAYA UNIDAD GUAYMAS">COLEGIO VIZCAYA UNIDAD GUAYMAS</option>
+					<option value="COLEGIO YOLANDA ANDRADE">COLEGIO YOLANDA ANDRADE</option>
+					<option value="CONALEP PLANTEL AGUA PRIETA">CONALEP PLANTEL AGUA PRIETA</option>
+					<option value="CONALEP PLANTEL CABORCA">CONALEP PLANTEL CABORCA</option>
+					<option value="CONALEP PLANTEL CD. OBREGON">CONALEP PLANTEL CD. OBREGON</option>
+					<option value="CONALEP PLANTEL EMPALME">CONALEP PLANTEL EMPALME</option>
+					<option value="CONALEP PLANTEL GUAYMAS GRAL. P. ELIAS CALLES">CONALEP PLANTEL GUAYMAS GRAL. P. ELIAS CALLES</option>
+					<option value="CONALEP PLANTEL HERMOSILLO I">CONALEP PLANTEL HERMOSILLO I</option>
+					<option value="CONALEP PLANTEL HERMOSILLO II">CONALEP PLANTEL HERMOSILLO II</option>
+					<option value="CONALEP PLANTEL HERMOSILLO III">CONALEP PLANTEL HERMOSILLO III </option>
+					<option value="CONALEP PLANTEL HUATABAMPO ALVARO OBREGON">CONALEP PLANTEL HUATABAMPO ALVARO OBREGON</option>
+					<option value="CONALEP PLANTEL MAGDALENA">CONALEP PLANTEL MAGDALENA</option>
+					<option value="CONALEP PLANTEL NACOZARI DE GARCIA">CONALEP PLANTEL NACOZARI DE GARCIA</option>
+					<option value="CONALEP PLANTEL NAVOJOA">CONALEP PLANTEL NAVOJOA</option>
+					<option value="CONALEP PLANTEL NOGALES">CONALEP PLANTEL NOGALES</option>
+					<option value="CONALEP PLANTEL SAN LUIS RIO COLORADO">CONALEP PLANTEL SAN LUIS RIO COLORADO</option>
+					<option value="EMSAD BACERAC">EMSAD BACERAC</option>
+					<option value="EMSAD BAHIA DE LOBOS">EMSAD BAHIA DE LOBOS</option>
+					<option value="EMSAD BASIROA">EMSAD BASIROA</option>
+					<option value="EMSAD BUAYSIACOBE">EMSAD BUAYSIACOBE</option>
+					<option value="EMSAD CARBO">EMSAD CARBO</option>
+					<option value="EMSAD CUMPAS">EMSAD CUMPAS</option>
+					<option value="EMSAD ESQUEDA">EMSAD ESQUEDA</option>
+					<option value="EMSAD GOLFO DE SANTA CLARA">EMSAD GOLFO DE SANTA CLARA</option>
+					<option value="EMSAD JUPARE">EMSAD JUPARE</option>
+					<option value="EMSAD LOS TANQUES">EMSAD LOS TANQUES</option>
+					<option value="EMSAD MAQUIPO">EMSAD MAQUIPO</option>
+					<option value="EMSAD MASIACA">EMSAD MASIACA</option>
+					<option value="EMSAD NACO">EMSAD NACO</option>
+					<option value="EMSAD PESQUEIRA">EMSAD PESQUEIRA</option>
+					<option value="EMSAD POTAM">EMSAD POTAM</option>
+					<option value="EMSAD PUERTO LIBERTAD">EMSAD PUERTO LIBERTAD</option>
+					<option value="EMSAD QUIRIEGO">EMSAD QUIRIEGO</option>
+					<option value="EMSAD ROSARIO TESOPACO">EMSAD ROSARIO TESOPACO</option>
+					<option value="EMSAD SAN PEDRO DE LA CUEVA">EMSAD SAN PEDRO DE LA CUEVA</option>
+					<option value="EMSAD SANTA MARIA DEL BUARAJE">EMSAD SANTA MARIA DEL BUARAJE</option>
+					<option value="EMSAD SUAQUI GRANDE">EMSAD SUAQUI GRANDE</option>
+					<option value="EMSAD TIERRA BLANCA">EMSAD TIERRA BLANCA</option>
+					<option value="EMSAD TUBUTAMA">EMSAD TUBUTAMA</option>
+					<option value="EMSAD YECORA">EMSAD YECORA</option>
+					<option value="ESCUELA DE ENFERMERIA DEL IMSS">ESCUELA DE ENFERMERIA DEL IMSS</option>
+					<option value="ESCUELA DE ENFERMERIA DEL IMSS CD. OBREGON">ESCUELA DE ENFERMERIA DEL IMSS CD. OBREGON</option>
+					<option value="ESCUELA DE ENFERMERIA DEL IMSS HERMOSILLO">ESCUELA DE ENFERMERIA DEL IMSS HERMOSILLO</option>
+					<option value="ESCUELA DE ENFERMERIA PABLO DE ANDA">ESCUELA DE ENFERMERIA PABLO DE ANDA</option>
+					<option value="ESCUELA DE ENFERMERIA PABLO DE ANDA A.C. NOGALES">ESCUELA DE ENFERMERIA PABLO DE ANDA A.C. NOGALES</option>
+					<option value="ESCUELA PITIC">ESCUELA PITIC</option>
+					<option value="ESCUELA PREPARATORIA PROFR. MIGUEL CASTILLO OSUNA">ESCUELA PREPARATORIA PROFR. MIGUEL CASTILLO OSUNA</option>
+					<option value="ESCUELA PREPARATORIA DE UNIVERSIDAD UNILIDER">ESCUELA PREPARATORIA DE UNIVERSIDAD UNILIDER</option>
+					<option value="ESCUELA PREPARATORIA POR COOPERACION “GENERAL ENRIQUE ESQUEDA”, A.C.">ESCUELA PREPARATORIA POR COOPERACION “GENERAL ENRIQUE ESQUEDA”, A.C.</option>
+					<option value="FUNDACION PBRO. LUIS LOPEZ ROMO">FUNDACION PBRO. LUIS LOPEZ ROMO</option>
+					<option value="ICADES, S.C.">ICADES, S.C.</option>
+					<option value="ICATSON AGUA PRIETA">ICATSON AGUA PRIETA</option>
+					<option value="ICATSON CABORCA">ICATSON CABORCA</option>
+					<option value="ICATSON CAJEME">ICATSON CAJEME</option>
+					<option value="ICATSON CANANEA">ICATSON CANANEA</option>
+					<option value="ICATSON EMPALME">ICATSON EMPALME</option>
+					<option value="ICATSON HERMOSILLO">ICATSON HERMOSILLO</option>
+					<option value="ICATSON NAVOJOA">ICATSON NAVOJOA</option>
+					<option value="ICES">ICES</option>
+					<option value="ICSON">ICSON</option>
+					<option value="INSTITUTO ANGLO MEXICANO, A.C.">INSTITUTO ANGLO MEXICANO, A.C.</option>
+					<option value="INSTITUTO BICULTURAL JULIETA E. MANRIQUEZ">INSTITUTO BICULTURAL JULIETA E. MANRIQUEZ</option>
+					<option value="INSTITUTO CABRERA">INSTITUTO CABRERA</option>
+					<option value="INSTITUTO DE ASISTENTE EDUCATIVO AC. (INASED)">INSTITUTO DE ASISTENTE EDUCATIVO AC. (INASED)</option>
+					<option value="INSTITUTO DE ASISTENTES EDUCATIVOS DE SONORA A.C.">INSTITUTO DE ASISTENTES EDUCATIVOS DE SONORA A.C.</option>
+					<option value="INSTITUTO DE CAPACITACION SUTSPES">INSTITUTO DE CAPACITACION SUTSPES</option>
+					<option value="INSTITUTO DE CAPACITACION SUTSPES, UNIDAD GUAYMAS">INSTITUTO DE CAPACITACION SUTSPES, UNIDAD GUAYMAS</option>
+					<option value="INSTITUTO DE CIENCIAS Y EDUCACION SUPERIOR, A.C">INSTITUTO DE CIENCIAS Y EDUCACION SUPERIOR, A.C</option>
+					<option value="INSTITUTO DE LA MODA">INSTITUTO DE LA MODA</option>
+					<option value="INSTITUTO DEL COBRE S.C.">INSTITUTO DEL COBRE S.C.</option>
+					<option value="INSTITUTO DEL OCCIDENTE S.C.">INSTITUTO DEL OCCIDENTE S.C.</option>
+					<option value="INSTITUTO EDUCATIVO  HERMOSILLO S.C.">INSTITUTO EDUCATIVO  HERMOSILLO S.C.</option>
+					<option value="INSTITUTO EDUCATIVO LOZANO CLARK">INSTITUTO EDUCATIVO LOZANO CLARK</option>
+					<option value="INSTITUTO GALY SAVATER">INSTITUTO GALY SAVATER</option>
+					<option value="INSTITUTO KINO DE SAN LUIS, A.C.">INSTITUTO KINO DE SAN LUIS, A.C.</option>
+					<option value="INSTITUTO LA SALLE">INSTITUTO LA SALLE</option>
+					<option value="INSTITUTO LEONS">INSTITUTO LEONS</option>
+					<option value=">INSTITUTO LIBERTAD JOSE VASCONCELOS">INSTITUTO LIBERTAD JOSE VASCONCELOS</option>
+					<option value="INSTITUTO LIBERTAD JOSE VASCONCELOS">>INSTITUTO LIBERTAD JOSE VASCONCELOS</option>
+					<option value="INSTITUTO REGIONAL DE GUAYMAS">INSTITUTO REGIONAL DE GUAYMAS</option>
+					<option value="INSTITUTO REGIONAL DE GUAYMAS UNIDAD ALTARES">INSTITUTO REGIONAL DE GUAYMAS UNIDAD ALTARES</option>
+					<option value="INSTITUTO REGIONAL DE GUAYMAS-UNIDAD OBREGON">INSTITUTO REGIONAL DE GUAYMAS-UNIDAD OBREGON</option>
+					<option value="INSTITUTO SIRAITARE, S.C.">INSTITUTO SIRAITARE, S.C.</option>
+					<option value="INSTITUTO SUPERIOR DE SEGURIDAD PUBLICA DEL ESTADO">INSTITUTO SUPERIOR DE SEGURIDAD PUBLICA DEL ESTADO</option>
+					<option value="INSTITUTO TECNOLOGICO DENTAL">INSTITUTO TECNOLOGICO DENTAL</option>
+					<option value="INSTITUTO TERESITA MUÑOZ">INSTITUTO TERESITA MUÑOZ</option>
+					<option value="INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL COLOSIO">INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL COLOSIO</option>
+					<option value="INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL PITIC">INSTITUTO VANGUARDIA DE HERMOSILLO, A.C. PLANTEL PITIC</option>
+					<option value="INSTITUTO WEBSTER, A.C.">INSTITUTO WEBSTER, A.C.</option>
+					<option value="LICEO SAN AGUSTIN, A.C.">LICEO SAN AGUSTIN, A.C.</option>
+					<option value="LICEO THEZIA">LICEO THEZIA</option>
+					<option value="MARIA YOLANDA ANDRADE ANTELO">MARIA YOLANDA ANDRADE ANTELO</option>
+					<option value="MONTESSOURI CORHALLI">MONTESSOURI CORHALLI</option>
+					<option value="MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO NORTE">MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO NORTE</option>
+					<option value="MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO SUR">MULTIVERSIDAD LATINOAMERICANA A.C. CAMPUS HERMOSILLO SUR</option>
+					<option value="MUSIC EDUCATION CENTER">MUSIC EDUCATION CENTER</option>
+					<option value="PREPARARORIA GRIMAC AGUA PRIETA">PREPARARORIA GRIMAC AGUA PRIETA</option>
+					<option value="PREPARARORIA TECNOLOGICA RIO COLORADO">PREPARARORIA TECNOLOGICA RIO COLORADO</option>
+					<option value="PREPARATORIA   UNIDEP, UNIDAD EMPALME">PREPARATORIA   UNIDEP, UNIDAD EMPALME</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD AGUA PRIETA">PREPARATORIA  UNIDEP, UNIDAD AGUA PRIETA</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD GUAYMAS">PREPARATORIA  UNIDEP, UNIDAD GUAYMAS</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD NAVOJOA">PREPARATORIA  UNIDEP, UNIDAD NAVOJOA</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD NOGALES">PREPARATORIA  UNIDEP, UNIDAD NOGALES</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD OBREGON">PREPARATORIA  UNIDEP, UNIDAD OBREGON</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD PUERTO PEÑASCO">PREPARATORIA  UNIDEP, UNIDAD PUERTO PEÑASCO</option>
+					<option value="PREPARATORIA  UNIDEP, UNIDAD SLRC">PREPARATORIA  UNIDEP, UNIDAD SLRC</option>
+					<option value="PREPARATORIA CIMA I.A.P.">PREPARATORIA CIMA I.A.P.</option>
+					<option value="PREPARATORIA COLEGIO NAVARRETE">PREPARATORIA COLEGIO NAVARRETE</option>
+					<option value="PREPARATORIA DE LA UVM NOGALES">PREPARATORIA DE LA UVM NOGALES</option>
+					<option value="PREPARATORIA DEL PACIFICO ICAM S.C.">PREPARATORIA DEL PACIFICO ICAM S.C.</option>
+					<option value="PREPARATORIA DR. BRAULIO PEREZ MARCIO">PREPARATORIA DR. BRAULIO PEREZ MARCIO</option>
+					<option value="PREPARATORIA EDUCATIVA PIRAMIDE DEL SOL">PREPARATORIA EDUCATIVA PIRAMIDE DEL SOL</option>
+					<option value="PREPARATORIA ESPINOSA, S.C.">PREPARATORIA ESPINOSA, S.C.</option>
+					<option value="PREPARATORIA GRIMAC NOGALES">PREPARATORIA GRIMAC NOGALES</option>
+					<option value="PREPARATORIA GRIMAC SLRC">PREPARATORIA GRIMAC SLRC</option>
+					<option value="PREPARATORIA GRIMAC, A.C.">PREPARATORIA GRIMAC, A.C. </option>
+					<option value="PREPARATORIA GRIMAC, A.C.  EXT. IMURIS">PREPARATORIA GRIMAC, A.C.  EXT. IMURIS</option>
+					<option value="PREPARATORIA HNOS. FLORES MAGON">PREPARATORIA HNOS. FLORES MAGON</option>
+					<option value="PREPARATORIA INSTITUTO SISTEMA EMPRESA INTELIGENTE">PREPARATORIA INSTITUTO SISTEMA EMPRESA INTELIGENTE</option>
+					<option value="PREPARATORIA INTERAMERICANA DE GUAYMAS">PREPARATORIA INTERAMERICANA DE GUAYMAS</option>
+					<option value="PREPARATORIA KINO">PREPARATORIA KINO</option>
+					<option value="PREPARATORIA KINO CABORCA">PREPARATORIA KINO CABORCA</option>
+					<option value="PREPARATORIA KINO MAGDALENA">PREPARATORIA KINO MAGDALENA</option>
+					<option value="PREPARATORIA KINO UNIDAD GUAYMAS">PREPARATORIA KINO UNIDAD GUAYMAS</option>
+					<option value="PREPARATORIA LARREA">PREPARATORIA LARREA</option>
+					<option value="PREPARATORIA METROPOLITANA DE CAJEME, S.C.">PREPARATORIA METROPOLITANA DE CAJEME, S.C.</option>
+					<option value="PREPARATORIA NOCTURNA ENRIQUE  C. REBSAMEN, A.C.">PREPARATORIA NOCTURNA ENRIQUE  C. REBSAMEN, A.C.</option>
+					<option value="PREPARATORIA OBREGON">PREPARATORIA OBREGON</option>
+					<option value="PREPARATORIA PEDRO DE GANTE">PREPARATORIA PEDRO DE GANTE</option>
+					<option value="PREPARATORIA POR COOPERACION DE EL CITAVARO">PREPARATORIA POR COOPERACION DE EL CITAVARO</option>
+					<option value="PREPARATORIA POR COOPERACION SIN FRONTERAS">PREPARATORIA POR COOPERACION SIN FRONTERAS</option>
+					<option value="PREPARATORIA SAN JUAN BAUTISTA DE LA SALLE">PREPARATORIA SAN JUAN BAUTISTA DE LA SALLE</option>
+					<option value="PREPARATORIA SANTA FE, S.C.">PREPARATORIA SANTA FE, S.C.</option>
+					<option value="PREPARATORIA SENDA 2000">PREPARATORIA SENDA 2000</option>
+					<option value="PREPARATORIA UNEPROP">PREPARATORIA UNEPROP</option>
+					<option value="PREPARATORIA UNIDEP, UNIDAD HERMOSILLO">PREPARATORIA UNIDEP, UNIDAD HERMOSILLO</option>
+					<option value="PREPARATORIA UNO NOGALES SONORA A.C.">PREPARATORIA UNO NOGALES SONORA A.C.</option>
+					<option value="SISTEMA EDUCATIVO MUÑOZ">SISTEMA EDUCATIVO MUÑOZ</option>
+					<option value="SISTEMA EDUCATIVO MUÑOZ UNIDAD NOGALES">SISTEMA EDUCATIVO MUÑOZ UNIDAD NOGALES</option>
+					<option value="UVM">UVM</option>
+				
 
 				</select>
 				</div>
@@ -619,11 +678,8 @@
 						<option value="6">6</option>
 
 					</select>
-
-
-					
 				</div>
-
+				
 
 				<legend>Carrera que solicita</legend>
 				<div class="form-group col-md-6">
@@ -641,7 +697,7 @@
 				<div class="form-group col-md-6">
 					<label for="">Turno</label>
 					<select name="TurnoParaEntrevist" id="" class="form-control" [(ngModel)]='nuevoAlumno.TurnoParaEntrevist'>
-							<option selected="selected" value="Seleccione...">Seleccione...</option>
+							
 							<option value="MATUTINO">MATUTINO</option>
 							<option value="VESPERTINO">VESPERTINO</option>
 
@@ -652,7 +708,7 @@
 				<div class="form-group col-md-6">
 					<label for="">¿Cómo te enteraste de la Universidad Tecnológica de Puerto Peñasco?</label>
 					<select name="Medios" id="" class="form-control" [(ngModel)]='nuevoAlumno.Medios'>
-							<option selected="selected" value="Seleccione...">Seleccione...</option>
+							
 							<option value="Anuncio de Radio">Anuncio de Radio</option>
 							<option value="Mediante Facebook">Mediante Facebook</option>
 							<option value="La UTPP visito mi escuela">La UTPP visito mi escuela</option>
@@ -669,7 +725,7 @@
 				<div class="form-group col-md-6">
 					<label for="">¿Cuantas Instituciones consideraste para cursar tus estudios de nivel superior?</label>
 					 <select name="NumInstitucionesConsidera" id="" class="form-control" [(ngModel)]='nuevoAlumno.NumInstitucionesConsidera'>
-							<option selected="selected" value="Seleccione...">Seleccione...</option>
+							
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>

@@ -48,7 +48,46 @@ module.exports = function(io, models){
                 ApellidoP: req.body.alumno.ApellidoP,
                 ApellidoM: req.body.alumno.ApellidoM,
                 FechaNac: req.body.alumno.FechaNac,
-                _carrera: req.body.alumno._carrera
+                _carrera: req.body.alumno._carrera,
+                NumHijos: req.body.alumno.NumHijos,
+                 Sexo: req.body.alumno.Sexo,
+                 EstadoCivil: req.body.alumno.EstadoCivil,
+                 PadreTutor: req.body.alumno.PadreTutor,
+                 RFC: req.body.alumno.RFC,
+                 Curp: req.body.alumno.Curp,
+                 GrupoEtnico: req.body.alumno.GrupoEtnico,
+                 TrabajoDeAlumno: req.body.alumno.TrabajoDeAlumno,
+                 NumDependientes: req.body.alumno.NumDependientes,
+                 Municipio: req.body.alumno.Municipio,
+                 Estado: req.body.alumno.Estado,
+                 Pais: req.body.alumno.Pais,
+                 Extranjero: req.body.alumno.Extranjero,
+                 PadresExtranjeros: req.body.alumno.PadresExtranjeros,
+                 Peso: req.body.alumno.Peso,
+                 Estatura: req.body.alumno.Estatura,
+                 TipoSangre: req.body.alumno.TipoSangre,
+                 AntecedMedicos: req.body.alumno.AntecedMedicos,
+                 OtroAnteced: req.body.alumno.OtroAnteced,
+                 discapacidad: req.body.alumno.discapacidad,
+                 NumSeguroSocial: req.body.alumno.NumSeguroSocial,
+                 Calle: req.body.alumno.Calle,
+                 Colonia: req.body.alumno.Colonia,
+                 Ciudad: req.body.alumno.Ciudad,
+                 NumExterior: req.body.alumno.NumExterior,
+                 CodPost: req.body.alumno.CodPost,
+                 EstadoDomi: req.body.alumno.EstadoDomi,
+                 TelefonoCasa: req.body.alumno.TelefonoCasa,
+                 TelefonoCel: req.body.alumno.TelefonoCel,
+                 Facebook: req.body.alumno.Facebook,
+                 Preparatoria: req.body.alumno.Preparatoria,
+                 Especialidad: req.body.alumno.Especialidad,
+                 PromedioFinal: req.body.alumno.PromedioFinal,
+                 Semestre: req.body.alumno.Semestre,
+                 PreparatoriaEstado: req.body.alumno.PreparatoriaEstado,
+                 TurnoParaEntrevist: req.body.alumno.TurnoParaEntrevist,
+                 Medios: req.body.alumno.Medios,
+                 NumInstitucionesConsidera: req.body.alumno.NumInstitucionesConsidera,
+                 JustificacionDeEleccion: req.body.alumno.JustificacionDeEleccion
             })
             .then(function(alumnoCreado){
                 usuario.setAlumno(alumnoCreado);
@@ -75,6 +114,45 @@ module.exports = function(io, models){
             var ApellidoM = req.body.ApellidoM;
             var FechaNac = req.body.FechaNac;
             var noMatricula = req.body.noMatricula;
+            var NumHijos = req.body.alumno.NumHijos;
+            var Sexo = req.body.alumno.Sexo;
+            var EstadoCivil = req.body.alumno.EstadoCivil;
+            var PadreTutor = req.body.alumno.PadreTutor;
+            var RFC = req.body.alumno.RFC;
+            var Curp = req.body.alumno.Curp;
+            var GrupoEtnico = req.body.alumno.GrupoEtnico;
+            var TrabajoDeAlumno = req.body.alumno.TrabajoDeAlumno;
+            var NumDependientes = req.body.alumno.NumDependientes;
+            var Municipio = req.body.alumno.Municipio;
+            var Estado = req.body.alumno.Estado;
+            var Pais = req.body.alumno.Pais;
+            var Extranjero = req.body.alumno.Extranjero;
+            var PadresExtranjeros = req.body.alumno.PadresExtranjeros;
+            var Peso = req.body.alumno.Peso;
+            var Estatura = req.body.alumno.Estatura;
+            var TipoSangre = req.body.alumno.TipoSangre;
+            var AntecedMedicos = req.body.alumno.AntecedMedicos;
+            var OtroAnteced = req.body.alumno.OtroAnteced;
+            var discapacidad = req.body.alumno.discapacidad;
+            var NumSeguroSocial = req.body.alumno.NumSeguroSocial;
+            var Calle = req.body.alumno.Calle;
+            var Colonia = req.body.alumno.Colonia;
+            var Ciudad = req.body.alumno.Ciudad;
+            var NumExterior = req.body.alumno.NumExterior;
+            var CodPost = req.body.alumno.CodPost;
+            var EstadoDomi = req.body.alumno.EstadoDomi;
+            var TelefonoCasa = req.body.alumno.TelefonoCasa;
+            var TelefonoCel = req.body.alumno.TelefonoCel;
+            var Facebook = req.body.alumno.Facebook;
+            var Preparatoria = req.body.alumno.Preparatoria;
+            var Especialidad = req.body.alumno.Especialidad;
+            var PromedioFinal = req.body.alumno.PromedioFinal;
+            var Semestre = req.body.alumno.Semestre;
+            var PreparatoriaEstado = req.body.alumno.PreparatoriaEstado;
+            var TurnoParaEntrevist = req.body.alumno.TurnoParaEntrevist;
+            var Medios = req.body.alumno.Medios;
+            var NumInstitucionesConsidera = req.body.alumno.NumInstitucionesConsidera;
+            var JustificacionDeEleccion = req.body.alumno.JustificacionDeEleccion;
             var tempCarreraID = alumnoEditado._carrera;
             var _carrera = req.body._carrera;
             console.log("CARRERA: "+_carrera);
@@ -86,6 +164,45 @@ module.exports = function(io, models){
                 FechaNac: FechaNac,
                 noMatricula: noMatricula,
                 _carrera: _carrera,
+                NumHijos: NumHijos,
+                 Sexo: Sexo,
+                 EstadoCivil: EstadoCivil,
+                 PadreTutor: PadreTutor,
+                 RFC: RFC,
+                 Curp: Curp,
+                 GrupoEtnico: GrupoEtnico,
+                 TrabajoDeAlumno: TrabajoDeAlumno,
+                 NumDependientes: NumDependientes,
+                 Municipio: Municipio,
+                 Estado: Estado,
+                 Pais: Pais,
+                 Extranjero: Extranjero,
+                 PadresExtranjeros: PadresExtranjeros,
+                 Peso: Peso,
+                 Estatura: Estatura,
+                 TipoSangre: TipoSangre,
+                 AntecedMedicos: AntecedMedicos,
+                 OtroAnteced: OtroAnteced,
+                 discapacidad: discapacidad,
+                 NumSeguroSocial: NumSeguroSocial,
+                 Calle: Calle,
+                 Colonia: Colonia,
+                 Ciudad: Ciudad,
+                 NumExterior: NumExterior,
+                 CodPost: CodPost,
+                 EstadoDomi: EstadoDomi,
+                 TelefonoCasa: TelefonoCasa,
+                 TelefonoCel: TelefonoCel,
+                 Facebook: Facebook,
+                 Preparatoria: Preparatoria,
+                 Especialidad: Especialidad,
+                 PromedioFinal: PromedioFinal,
+                 Semestre: Semestre,
+                 PreparatoriaEstado: PreparatoriaEstado,
+                 TurnoParaEntrevist: TurnoParaEntrevist,
+                 Medios: Medios,
+                 NumInstitucionesConsidera: NumInstitucionesConsidera,
+                 JustificacionDeEleccion: JustificacionDeEleccion
             })
             .then(alumnoEditado =>{
                 io.sockets.emit('AlumnoEditado',alumnoEditado);
