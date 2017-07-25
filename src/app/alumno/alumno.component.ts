@@ -101,8 +101,8 @@ export class AlumnoComponent implements OnInit {
 			sortList_createdAt_asc(this.Alumnos);
 	}
 
-	confirmBorrarPreinscrito(id){
-	    this._globalParams.configConfirmationModal(this.modal)
+	confirmBorrarPreinscrito(id, nombre){
+	    this._globalParams.configConfirmationModal(this.modal, nombre)
 	    .open().then((resultPromise)=>{
 	      resultPromise.result.then(
 	          (result)=>{
@@ -116,7 +116,9 @@ export class AlumnoComponent implements OnInit {
 	borrarPreinscrito(id){
 	    this._alumnoService.deleteAlumno(id)
 	    .subscribe(
-	      data=>{ },
+	      data=>{ 
+	      	this.showAlumnos();
+	      },
 	      error=>alert(error),
 	      ()=>console.log('done!')
 	    );

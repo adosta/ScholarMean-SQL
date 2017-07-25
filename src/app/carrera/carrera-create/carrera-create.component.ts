@@ -18,7 +18,7 @@ export class CarreraCreateComponent implements OnInit,DoCheck {
 
   emitirAccion = new EventEmitter<string>();
 
-  constructor(private _carreraService : CarreraService ) { }
+  constructor(private _carreraService : CarreraService) { }
 
   ngOnInit() {
   }
@@ -36,7 +36,7 @@ export class CarreraCreateComponent implements OnInit,DoCheck {
     if(this.accionForm=="Agregar"){
       this._carreraService.addCarrera(this.nuevaCarrera)
       .subscribe(
-        (data:Carrera)=>{ this.nuevaCarrera = data; },
+        (data:Carrera)=>{ this.nuevaCarrera = data },
         error=>alert(error),
         ()=>console.log('done!')
       );

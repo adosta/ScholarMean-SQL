@@ -23,7 +23,7 @@ module.exports=function(sequelize, DataTypes){
 	    type: Sequelize.STRING
 	},
 	FechaNac: {
-	    type: Sequelize.DATE
+	    type: Sequelize.DATEONLY
 	},
 	NumHijos: {
 	    type: Sequelize.STRING

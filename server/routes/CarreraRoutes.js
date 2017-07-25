@@ -34,6 +34,7 @@ module.exports = function(io,models){
         })
         .then(newCarrera => {
             console.log(newCarrera);
+            io.sockets.emit('carreraCreada',newCarrera);
             res.json(newCarrera);
         })
     });

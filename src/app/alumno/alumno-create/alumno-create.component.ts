@@ -56,6 +56,7 @@ export class AlumnoCreateComponent implements OnInit {
 		        .subscribe(
 		        	(data:Alumno)=>{
 						this.nuevoAlumno = data;
+						console.log(this.nuevoAlumno);
 						this.nuevoAlumno.FechaNac = 
 							moment(this.nuevoAlumno.FechaNac)
 							.format('YYYY-MM-DD');

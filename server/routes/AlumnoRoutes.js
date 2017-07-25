@@ -42,6 +42,7 @@ module.exports = function(io, models){
             rol: "alumno",
         })
         .then(function(usuario){
+            console.log(chalk.red("FECHA DE NACIMIENTO: ",req.body.alumno.FechaNac));
             Alumno.create({
                 Nombre: req.body.alumno.Nombre,
                 ApellidoP: req.body.alumno.ApellidoP,
@@ -49,9 +50,10 @@ module.exports = function(io, models){
                 FechaNac: req.body.alumno.FechaNac,
                 _carrera: req.body.alumno._carrera
             })
-            .then(function(alumno){
-                usuario.setAlumno(alumno);
-                res.json(alumno);
+            .then(function(alumnoCreado){
+                usuario.setAlumno(alumnoCreado);
+                io.sockets.emit('AlumnoCreado',alumnoCreado);
+                res.json(alumnoCreado);
             })
         })
     });
@@ -85,7 +87,11 @@ module.exports = function(io, models){
                 noMatricula: noMatricula,
                 _carrera: _carrera,
             })
-            res.json(alumnoEditado);
+            .then(alumnoEditado =>{
+                io.sockets.emit('AlumnoEditado',alumnoEditado);
+                res.json(alumnoEditado);
+            })
+            
         })
     });
 
@@ -174,16 +180,17 @@ module.exports = function(io, models){
     */
     router.route('/Alumno/:id')
     .delete(function(req, res) {
-        var id = req.params._id;
-        console.log("IDE PARA BORRAR: ",req.params._id);
+        var id = req.params.id;
+        console.log("IDE PARA BORRAR: ",req.params.id);
         Alumno.destroy({
             where: {
                 _id: id
             }
         })
         .then(deletedAlumno => {
-        res.json(deletedAlumno);
-      });
+            io.sockets.emit('AlumnoEliminado',deletedAlumno);
+            res.json(deletedAlumno);
+          });
 
     });
     // GET /api/Alumno:id
@@ -202,6 +209,7 @@ module.exports = function(io, models){
             include:[Carrera,Grupo,Deposito]
         })
         .then(alumno=>{
+            console.log(chalk.green(alumno.FechaNac));
             res.json(alumno);
         })
     });

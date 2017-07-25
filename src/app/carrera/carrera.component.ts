@@ -93,7 +93,9 @@ export class CarreraComponent implements OnInit {
   borrarCarrera(id){
     this._carreraService.deleteCarrera(id)
     .subscribe(
-      data=>{ },
+      data=>{ 
+        this.showCarreras();
+      },
       error=>alert(error),
       ()=>console.log('done!')
     );

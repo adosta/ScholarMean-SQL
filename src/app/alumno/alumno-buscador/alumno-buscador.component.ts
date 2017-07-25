@@ -55,8 +55,12 @@ export class AlumnoBuscadorComponent implements OnInit {
   }
 
   seleccionCarrera(){
+    console.log(this.filtro._carrera);
     let carr = this.Carreras.filter(car=>car._id == this.filtro._carrera)[0];
-    this.Grupos = carr.grupos;
+    if(this.filtro._carrera){
+      this.Grupos = carr.grupos;
+    }
+    
     this.buscar()    
   }
 
