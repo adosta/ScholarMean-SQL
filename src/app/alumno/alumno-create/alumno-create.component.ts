@@ -62,6 +62,8 @@ export class AlumnoCreateComponent implements OnInit {
 							.format('YYYY-MM-DD');
 						console.log(this.nuevoAlumno.FechaNac);
 						this.userLogin = this.nuevoAlumno._usuario;
+						console.log('Este es el correo', this.userLogin.email);
+						console.log('Este es el password', this.userLogin.password);
 						//concatenar id en dir
 						this.URL = this.URL + this.nuevoAlumno._id;
 						this.uploader = new FileUploader({url: this.URL});
