@@ -17,7 +17,7 @@ module.exports=function(sequelize, DataTypes){
     type: Sequelize.STRING
   },
   fecha: {
-    type: Sequelize.DATE
+    type: Sequelize.DATEONLY
   }, 
 
   });
