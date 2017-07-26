@@ -21,7 +21,7 @@ export class AlumnoBuscadorComponent implements OnInit {
     private _grupoService:GrupoService) { }
 
   ngOnInit() {
-  	this.filtro._carrera="";
+  	this.filtro.carrera="";
     this.filtro.Nombre="";
   	this.showAlumnos();
     this._carreraService.getCarreras()
@@ -55,9 +55,9 @@ export class AlumnoBuscadorComponent implements OnInit {
   }
 
   seleccionCarrera(){
-    console.log(this.filtro._carrera);
-    let carr = this.Carreras.filter(car=>car._id == this.filtro._carrera)[0];
-    if(this.filtro._carrera){
+    console.log(this.filtro.carrera);
+    let carr = this.Carreras.filter(car=>car._id == this.filtro.carrera)[0];
+    if(this.filtro.carrera){
       this.Grupos = carr.grupos;
     }
     

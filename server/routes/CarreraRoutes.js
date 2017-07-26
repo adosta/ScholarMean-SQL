@@ -51,6 +51,7 @@ module.exports = function(io,models){
         // Busca instancia existente en la base de datos
         Carrera.findById(req.body._id)
         .then(carrera => {
+            console.log(carrera)
             carrera.updateAttributes({
                 nombre: nombre,
                 abreviacion: abreviacion,
@@ -58,6 +59,7 @@ module.exports = function(io,models){
             });
         })
         .then(updatedCarrera => {
+            io.sockets.emit('carreraEditada',updatedCarrera);
             res.json(updatedCarrera);
         });
     });
