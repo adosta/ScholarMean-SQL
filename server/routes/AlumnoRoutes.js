@@ -332,7 +332,12 @@ module.exports = function(io, models){
         })
     });
 
-     router.route('/Alumno/getUser/:id')
+    // GET //Alumno/getUser/:id
+    /*
+    * Entrega toda la informacion concreta dado
+    * un ID sobre un registro especifico de esta entidad, para los usuarios Alumno
+    */
+    router.route('/Alumno/getUser/:id')
     .get(function(req, res) {
         var id = req.params.id;
         console.log("SE ESTA BUSCANDO");
