@@ -183,8 +183,8 @@ export class AlumnoCreateComponent implements OnInit {
 	itemSelected(optionCarreraID){
 		console.log(this.nuevoAlumno);
 		let alumnoCarreraID = '';
-		if(this.nuevoAlumno.carrera._id!=null)
-			alumnoCarreraID = this.nuevoAlumno.carrera._id;
+		if(this.nuevoAlumno._carrera._id!=null)
+			alumnoCarreraID = this.nuevoAlumno._carrera._id;
 		return optionCarreraID == alumnoCarreraID;
 	}
 
@@ -206,7 +206,7 @@ export class AlumnoCreateComponent implements OnInit {
 		if(this.nuevoAlumno._grupo)
 			this.alumnoStatus = AlumnoStatus.Inscrito;
 		//Si no tiene grupo pero si carrera, esta preinscrito
-		else if(this.nuevoAlumno.carrera){
+		else if(this.nuevoAlumno._carrera){
 			this.alumnoStatus = AlumnoStatus.Preinscrito;
 		}
 		//Si no cumple con ninguna condicion previa, esta en registro

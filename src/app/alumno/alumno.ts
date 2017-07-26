@@ -8,7 +8,7 @@ export class Alumno{
 		public ApellidoP?:string,
 		public ApellidoM?:string,
 		public FechaNac?:string,
-		public carrera?:Carrera,
+		public _carrera?:Carrera,
 		public _grupo?:Grupo,
 		public createdAt?:Date,
 		public noMatricula?: String,

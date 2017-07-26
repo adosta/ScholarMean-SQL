@@ -24,6 +24,7 @@ export class AlumnoDetailsComponent implements OnInit {
   	//Buscar el alumno que tiene el su llave foranea _usuario igual a la clave primaria de currentUser
   	this._alumnoService.getAlumnoByUserID(this.currentUser._id)
   	.subscribe((data:Alumno)=>{
+      console.log(data);
   		this.alumno=data;
   	},
   	error=>alert(error),
