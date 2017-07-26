@@ -6,6 +6,7 @@
 			class="form-control"
 			[(ngModel)]='grupo._id'
 			(change)='cambiaGrupo()'>
+			<!--selectListGrupos-->
 			<option *ngFor='let grupo of selectListGrupos' [value]='grupo._id'>
 				{{grupo.nombre}}
 			</option>

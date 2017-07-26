@@ -66,6 +66,10 @@ export class SimpleListComponent implements OnInit {
 				else
 					this.grupos = data;
 
+				if(this.grupos.length == 1){
+					this.selectListGrupos = this.grupos;
+				}
+				
 				this.ignorarGrupo();
 			},
 			(error)=>{

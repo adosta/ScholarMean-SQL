@@ -323,7 +323,7 @@ module.exports = function(io, models){
             where:{
                 _id:id
             },
-            include:[Carrera,Grupo,Deposito]
+            include:[Carrera,Grupo,Deposito,Usuario]
         })
         .then(alumno=>{
             console.log(chalk.green(alumno.FechaNac));
@@ -331,10 +331,15 @@ module.exports = function(io, models){
         })
     });
 
-     /*router.route('/Alumno/getUser/:id')
+    // GET //Alumno/getUser/:id
+    /*
+    * Entrega toda la informacion concreta dado
+    * un ID sobre un registro especifico de esta entidad, para los usuarios Alumno
+    */
+    router.route('/Alumno/getUser/:id')
     .get(function(req, res) {
-        var id = req.params._id;
-        consoe.log("SE ESTA BUSCANDO");
+        var id = req.params.id;
+        console.log("SE ESTA BUSCANDO");
 
         //Se busca por ID
         Alumno.findOne({
@@ -346,7 +351,7 @@ module.exports = function(io, models){
         .then(alumno=>{
             res.json(alumno);
         })
-    });*/
+    });
 
 
     router.post('/Alumno/upload/:id', upload.single("file"), function(req, res, next) {
