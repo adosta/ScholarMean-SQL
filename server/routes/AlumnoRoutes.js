@@ -127,7 +127,11 @@ module.exports = function(io, models){
             var NumDependientes = req.body.NumDependientes;
             var Municipio = req.body.Municipio;
             var Estado = req.body.Estado;
+<<<<<<< HEAD
             var Pais = req.body.Pais;
+=======
+            var Pais = req.body.alumno.Pais;
+>>>>>>> origin/master
             var Extranjero = req.body.Extranjero;
             var PadresExtranjeros = req.body.PadresExtranjeros;
             var Peso = req.body.Peso;
@@ -155,7 +159,11 @@ module.exports = function(io, models){
             var Medios = req.body.Medios;
             var NumInstitucionesConsidera = req.body.NumInstitucionesConsidera;
             var JustificacionDeEleccion = req.body.JustificacionDeEleccion;
+<<<<<<< HEAD
             var tempCarreraID = alumno._carrera;
+=======
+            var tempCarreraID = alumnoEditado._carrera;
+>>>>>>> origin/master
             var _carrera = req.body._carrera;
             console.log("CARRERA: "+_carrera);
 
