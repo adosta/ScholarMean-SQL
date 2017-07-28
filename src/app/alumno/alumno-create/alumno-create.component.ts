@@ -203,8 +203,11 @@ export class AlumnoCreateComponent implements OnInit {
 
 	determinarStatusAlumno(){
 		//Esta inscrito si tiene grupo
-		if(this.nuevoAlumno._grupo)
+		if(this.nuevoAlumno._grupo){
 			this.alumnoStatus = AlumnoStatus.Inscrito;
+			console.log(this.alumnoStatus)
+		}
+			
 		//Si no tiene grupo pero si carrera, esta preinscrito
 		else if(this.nuevoAlumno._carrera){
 			this.alumnoStatus = AlumnoStatus.Preinscrito;

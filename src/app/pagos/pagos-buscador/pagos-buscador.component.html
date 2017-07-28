@@ -3,6 +3,12 @@
 		<form #filtroForm='ngForm' (submit)='showPagosBusqueda()' class="form-inline" role="form">
 			<input type="date" id="inicio" name="inicio" [(ngModel)]='filtro.inicio' #inicio='ngModel'>
 			<input type="date" id="final" name="final" [(ngModel)]='filtro.final' #final='ngModel'>
+			<select class="form-control" id="Concepto" name="Concepto"
+				[(ngModel)]='filtro.concepto' >
+					<option value="">Todos</option>
+				    <option value="Pago de inscripcion">Pago de inscripcion</option>
+				    <option value="Varios">Varios</option>
+			</select>
 			<button type="submit" class="btn btn-primary pull-right">Buscar</button>
 		</form>
 	</div>

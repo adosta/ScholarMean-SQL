@@ -70,7 +70,8 @@ export class SimpleListComponent implements OnInit {
 					this.selectListGrupos = this.grupos;
 				}
 				
-				this.ignorarGrupo();
+				else
+					this.ignorarGrupo();
 			},
 			(error)=>{
 				console.log(error);

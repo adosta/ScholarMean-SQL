@@ -150,16 +150,28 @@ module.exports = function(io, models){
     */
     router.route('/Depositos/buscar')
     .post(function(req, res) {
+    	console.log(req.body.inicio);
+    	console.log(req.body.final);
         var inicio = new Date(req.body.inicio);
         var final = new Date(req.body.final);
+        var concepto = req.body.concepto;
         console.log(chalk.blue('Inicio:')+chalk.red(inicio));
         console.log(chalk.blue('Final:')+chalk.red(final));
         Deposito.findAll({ 
         	 where: {
-        	 	createdAt:{
-        	 		$between: [inicio, final]
+        	 	$and:{
+        	 		fecha:{
+	        	 		$between: [inicio, final]
+	        	 	},
+	        	 	$or:{
+	        	 		concepto:{
+	        	 			$like: '%'+concepto+'%'
+	        	 		}
+	        	 	}
         	 	}
-			  }
+        	 	
+			  },
+			  include:[Alumno]
 		})
         .then(depositos => {
 		        res.json(depositos);

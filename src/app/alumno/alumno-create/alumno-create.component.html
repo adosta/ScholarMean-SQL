@@ -686,7 +686,7 @@
 				<div class="form-group col-md-6">
 					<label for="carrera">Carrera</label>
 					<select class="form-control" id="carrera" name="carrera"
-					[(ngModel)]='nuevoAlumno._carrera' required>
+					[(ngModel)]='nuevoAlumno._carrera' [disabled]="estaInscrito()" required>
 					    <option *ngFor="let carrera of Carreras"
 					    [value]="carrera._id">
 					    	{{carrera.nombre}}
@@ -758,7 +758,7 @@
 	</div>
 </div>
 
-<div class="panel panel-primary">
+<div class="panel panel-primary" *ngIf='estaInscrito()'>
 	<div class="panel-heading">
 		<h3 class="panel-title">Documentacion</h3>
 	</div>

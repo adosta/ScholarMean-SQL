@@ -35,13 +35,30 @@ module.exports = function(io, models){
     router.route('/Alumno')
     .post(function(req, res) {
 
-        console.log("NOMBRE: "+req.body.Nombre);
-        Usuario.create({
+        /*Usuario.create({
             email: req.body.user.email,
             password: req.body.user.password,
             rol: "alumno",
-        })
-        .then(function(usuario){
+        })*/
+        Usuario.findOrCreate({
+            where: {email: req.body.user.email}, 
+            defaults: {password: req.body.user.password, rol: 'alumno'}})
+          .spread((usuario, created) => {
+            console.log(usuario.get({
+              plain: true
+            }))
+            console.log(created)
+            if(created == true){
+                console.log(created);
+                res.json(true);
+            }
+            else{
+                console.log(created);
+                res.json(true);
+            }
+            
+          })
+        /*.then(function(usuario){
             console.log(chalk.red("FECHA DE NACIMIENTO: ",req.body.alumno.FechaNac));
             Alumno.create({
                 Nombre: req.body.alumno.Nombre,
@@ -94,7 +111,7 @@ module.exports = function(io, models){
                 io.sockets.emit('AlumnoCreado',alumnoCreado);
                 res.json(alumnoCreado);
             })
-        })
+        })*/
     });
 
     // PUT /api/Alumno

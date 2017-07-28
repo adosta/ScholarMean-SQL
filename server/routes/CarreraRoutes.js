@@ -113,7 +113,7 @@ module.exports = function(io,models){
             include: [Grupo]
         })
         .then(carrera =>{
-            console.log("CARRERA: "+carrera.grupos[0]._id);
+            //console.log("CARRERA: "+carrera.grupos[0]._id);
             res.json(carrera)
         })
     });
