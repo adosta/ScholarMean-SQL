@@ -40,6 +40,7 @@ module.exports = function(io, models){
             password: req.body.user.password,
             rol: "alumno",
         })*/
+        console.log(chalk.red(req.body.email));
         Usuario.findOrCreate({
             where: {email: req.body.user.email}, 
             defaults: {password: req.body.user.password, rol: 'alumno'}})
@@ -48,13 +49,63 @@ module.exports = function(io, models){
               plain: true
             }))
             console.log(created)
-            if(created == true){
-                console.log(created);
-                res.json(true);
-            }
+            if(created){
+                Alumno.create({
+                    Nombre: req.body.alumno.Nombre,
+                    ApellidoP: req.body.alumno.ApellidoP,
+                    ApellidoM: req.body.alumno.ApellidoM,
+                    FechaNac: req.body.alumno.FechaNac,
+                    _carrera: req.body.alumno._carrera,
+                    NumHijos: req.body.alumno.NumHijos,
+                     Sexo: req.body.alumno.Sexo,
+                     EstadoCivil: req.body.alumno.EstadoCivil,
+                     PadreTutor: req.body.alumno.PadreTutor,
+                     RFC: req.body.alumno.RFC,
+                     Curp: req.body.alumno.Curp,
+                     GrupoEtnico: req.body.alumno.GrupoEtnico,
+                     TrabajoDeAlumno: req.body.alumno.TrabajoDeAlumno,
+                     NumDependientes: req.body.alumno.NumDependientes,
+                     Municipio: req.body.alumno.Municipio,
+                     Estado: req.body.alumno.Estado,
+                     Pais: req.body.alumno.Pais,
+                     Extranjero: req.body.alumno.Extranjero,
+                     PadresExtranjeros: req.body.alumno.PadresExtranjeros,
+                     Peso: req.body.alumno.Peso,
+                     Estatura: req.body.alumno.Estatura,
+                     TipoSangre: req.body.alumno.TipoSangre,
+                     AntecedMedicos: req.body.alumno.AntecedMedicos,
+                     OtroAnteced: req.body.alumno.OtroAnteced,
+                     discapacidad: req.body.alumno.discapacidad,
+                     NumSeguroSocial: req.body.alumno.NumSeguroSocial,
+                     Calle: req.body.alumno.Calle,
+                     Colonia: req.body.alumno.Colonia,
+                     Ciudad: req.body.alumno.Ciudad,
+                     NumExterior: req.body.alumno.NumExterior,
+                     CodPost: req.body.alumno.CodPost,
+                     EstadoDomi: req.body.alumno.EstadoDomi,
+                     TelefonoCasa: req.body.alumno.TelefonoCasa,
+                     TelefonoCel: req.body.alumno.TelefonoCel,
+                     Facebook: req.body.alumno.Facebook,
+                     Preparatoria: req.body.alumno.Preparatoria,
+                     Especialidad: req.body.alumno.Especialidad,
+                     PromedioFinal: req.body.alumno.PromedioFinal,
+                     Semestre: req.body.alumno.Semestre,
+                     PreparatoriaEstado: req.body.alumno.PreparatoriaEstado,
+                     TurnoParaEntrevist: req.body.alumno.TurnoParaEntrevist,
+                     Medios: req.body.alumno.Medios,
+                     NumInstitucionesConsidera: req.body.alumno.NumInstitucionesConsidera,
+                     JustificacionDeEleccion: req.body.alumno.JustificacionDeEleccion
+                })
+                .then(function(alumnoCreado){
+                    usuario.setAlumno(alumnoCreado);
+                    io.sockets.emit('AlumnoCreado',alumnoCreado);
+                    res.json(alumnoCreado);
+                })
+        }
+            
             else{
                 console.log(created);
-                res.json(true);
+                res.json(created);
             }
             
           })
