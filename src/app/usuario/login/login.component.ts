@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 		this._usuarioService.autenticar(this.userLogin)
 		.subscribe(
 			(data:UserLogin)=>{
-				localStorage.setItem('currentUser',JSON.stringify(data));
+				sessionStorage.setItem('currentUser',JSON.stringify(data));
 
 				if(data._id){
 					if(data.rol=='admin'){

@@ -18,7 +18,7 @@ export class SidebarmenuComponent implements OnInit {
  ngOnInit() {
     //var usuario = localStorage.getItem('currentUser');
      this.globalEventsManager.showNavBarEmitter.subscribe((modo:boolean)=>{
-         this.usuario = JSON.parse(localStorage.getItem('currentUser'));
+         this.usuario = JSON.parse(sessionStorage.getItem('currentUser'));
 
           // mode will be null the first time it is created, so you need to igonore it when null
           if(modo!==null){
@@ -35,7 +35,7 @@ export class SidebarmenuComponent implements OnInit {
  
   logout() {
         // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+        sessionStorage.removeItem('currentUser');
         this.globalEventsManager.showNavBar(false);
 
     }
