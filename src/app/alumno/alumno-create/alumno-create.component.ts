@@ -29,6 +29,7 @@ export class AlumnoCreateComponent implements OnInit {
 	tipoArchivo: string;
 	tipoDocumento: string;
 	existeDocumento = new Array();
+	validationMessage: string;
 
 	tipos = [
        "acta", "constancia"
@@ -126,13 +127,14 @@ export class AlumnoCreateComponent implements OnInit {
 		if(this.alumnoStatus == AlumnoStatus.EnRegistro){
 			//Si el alumno esta en registro, se crea nuevo registro
 			this.agregarAlumno();
+			console.log(this.agregarAlumno())
 		}else
 		{
 			//Si ya estaba registrado, solo se modifica
 			this.modificarAlumno();
 		}
 
-		this._router.navigate(['alumno']);
+		/*this._router.navigate(['alumno']);
 		if(!usuario)//Si no hay usuario logeado
 		{
 			//Redireccion a login
@@ -140,13 +142,29 @@ export class AlumnoCreateComponent implements OnInit {
 		}else if(usuario.rol=='admin'){
 			//Redireccion a listado de preinscripciones
 			this._router.navigate(['alumno']);
-		}
+		}*/
 	}
 
 	agregarAlumno(){ 
 		this._alumnoService.addAlumno(this.nuevoAlumno, this.userLogin)
 		.subscribe(
-			(data:Alumno)=>{ },
+			(data:any)=>{ 
+				let usuario:UserLogin = JSON.parse(localStorage.getItem('currentUser'));
+				if(data == false){
+					this.validationMessage = "Este correo ya esta registrado";
+				}
+
+				else{
+					if(!usuario)//Si no hay usuario logeado
+					{
+						//Redireccion a login
+						this._router.navigate(['login']);
+					}else if(usuario.rol=='admin'){
+						//Redireccion a listado de preinscripciones
+						this._router.navigate(['alumno']);
+					}
+				}
+			},
 			//this._router.navigate(['alumno']);
 			error=>alert(error),
 			()=>console.log('done!')
